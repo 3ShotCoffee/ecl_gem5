@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # Copyright (c) 2015 Jason Power
 # All rights reserved.
 #
@@ -34,15 +35,15 @@ from each class instead of only from the configuration script.
 # Module-level variable to track if we've called the parse_args function yet
 called_parse_args = False
 
-# import the argument parser
-from argparse import ArgumentParser
-
 # For fatal
 import m5
 
-# add the args we want to be able to control from the command line
-parser = ArgumentParser()
+# import the argument parser
+from argparse import ArgumentParser, REMAINDER
 
+# add the args we want to be able to control from the command line
+called_parse_args = False
+parser = ArgumentParser()
 
 def add_option(*args, **kwargs):
     """Call "add_option" to the global options parser"""
