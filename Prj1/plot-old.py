@@ -97,7 +97,7 @@ for stat_index, stat_label in enumerate(stat_labels):
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
-    filename = fr"plots\plot_{stat_label.replace('::', '_')}.png"
+    filename = rf"plots\plot_{stat_label.replace('::', '_')}.png"
     plt.savefig(filename)
     plt.close()
 
