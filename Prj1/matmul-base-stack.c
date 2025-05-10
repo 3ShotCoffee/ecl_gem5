@@ -38,10 +38,10 @@ int main(int argc, char *argv[])
         fprintf(stderr, "Usage: %s <MATSIZE> \n", argv[0]);
         return 1;
     }
-    
+
     const int size = atoi(argv[1]); // size (1D length) of matrices A, B and C
     int A[size][size], B[size][size], C[size][size];
-    
+
     printf("[BASE matrix multiplication]\n");
     printf("matrix size: %d x %d\n", size, size);
 

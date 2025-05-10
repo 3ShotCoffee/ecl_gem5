@@ -1,21 +1,26 @@
 import itertools
-import subprocess
 import os
 import shutil
+import subprocess
 import time
-from concurrent.futures import ProcessPoolExecutor, as_completed, CancelledError
+from concurrent.futures import (
+    CancelledError,
+    ProcessPoolExecutor,
+    as_completed,
+)
 
 # Sweep parameters
 matrix_sizes = [100, 128, 200, 256]
-cache_sizes = ['16kB', '32kB', '64kB']
+cache_sizes = ["16kB", "32kB", "64kB"]
 assocs = [1, 2, 4, 8]
-replacement_policies = ['FIFO', 'LFU', 'LRU', 'MRU', 'Random']
+replacement_policies = ["FIFO", "LFU", "LRU", "MRU", "Random"]
 
 gem5_exe = "../build/X86/gem5.opt"
 script = "system_l1.py"
 out_root = "out"
 max_workers = 34  # Adjust to use fewer cores if needed
 SUCCESS_STRING = "The sum is"
+
 
 def construct_job(msize, bsize, is_blocked, csize, assoc, rp):
     config_str = f"{csize}_{assoc}_{rp}"
@@ -26,7 +31,9 @@ def construct_job(msize, bsize, is_blocked, csize, assoc, rp):
             f"--l1d_size={csize}",
             f"--l1d_assoc={assoc}",
             f"--l1d_rp={rp}",
-            "matmul-blocked", str(msize), str(bsize)
+            "matmul-blocked",
+            str(msize),
+            str(bsize),
         ]
     else:
         outdir = os.path.join(out_root, f"{msize}_base", config_str)
@@ -34,10 +41,12 @@ def construct_job(msize, bsize, is_blocked, csize, assoc, rp):
             f"--l1d_size={csize}",
             f"--l1d_assoc={assoc}",
             f"--l1d_rp={rp}",
-            "matmul-base", str(msize)
+            "matmul-base",
+            str(msize),
         ]
 
     return (outdir, args)
+
 
 def run_simulation(job):
     outdir, args = job
@@ -55,6 +64,7 @@ def run_simulation(job):
 
     return outdir
 
+
 def main():
     start_time = time.time()
 
@@ -66,7 +76,9 @@ def main():
 
     # Build the job list
     jobs = []
-    for size, assoc, rp in itertools.product(cache_sizes, assocs, replacement_policies):
+    for size, assoc, rp in itertools.product(
+        cache_sizes, assocs, replacement_policies
+    ):
         for msize in matrix_sizes:
             # matmul-base
             jobs.append(construct_job(msize, None, False, size, assoc, rp))
@@ -86,7 +98,9 @@ def main():
     completed = 0
     try:
         with ProcessPoolExecutor(max_workers=max_workers) as executor:
-            futures = {executor.submit(run_simulation, job): job for job in jobs}
+            futures = {
+                executor.submit(run_simulation, job): job for job in jobs
+            }
             for future in as_completed(futures):
                 job = futures[future]
                 outdir = job[0]
@@ -104,7 +118,10 @@ def main():
         print("Execution was cancelled.")
 
     total_time = time.time() - start_time
-    print(f"\nTotal runtime: {total_time:.2f} seconds ({total_time/60:.2f} minutes)")
+    print(
+        f"\nTotal runtime: {total_time:.2f} seconds ({total_time/60:.2f} minutes)"
+    )
+
 
 if __name__ == "__main__":
     main()

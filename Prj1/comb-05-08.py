@@ -1,8 +1,13 @@
-from PIL import Image, ImageDraw, ImageFont
 import os
 
-cache_sizes = ['16kB', '32kB', '64kB']
-replacement_policies = ['FIFO', 'LFU', 'LRU', 'MRU', 'Random']
+from PIL import (
+    Image,
+    ImageDraw,
+    ImageFont,
+)
+
+cache_sizes = ["16kB", "32kB", "64kB"]
+replacement_policies = ["FIFO", "LFU", "LRU", "MRU", "Random"]
 
 image_files = [
     "simTicks.png",
@@ -13,7 +18,7 @@ image_files = [
     "system.cpu.dcache.demandAccesses_total.png",
     "system.cpu.icache.demandHits_total.png",
     "system.cpu.icache.demandMisses_total.png",
-    "system.cpu.icache.demandAccesses_total.png"
+    "system.cpu.icache.demandAccesses_total.png",
 ]
 
 # Try to load a default font
@@ -41,7 +46,9 @@ for csize in cache_sizes:
         final_height = rows * (img_height + label_height)
 
         # Create a new blank white image
-        final_img = Image.new('RGB', (final_width, final_height), color='white')
+        final_img = Image.new(
+            "RGB", (final_width, final_height), color="white"
+        )
         draw = ImageDraw.Draw(final_img)
 
         # Paste each image and add label
@@ -83,7 +90,7 @@ for stat_label in image_files:
     final_height = rows * (img_height + label_height)
 
     # Create a new blank white image
-    final_img = Image.new('RGB', (final_width, final_height), color='white')
+    final_img = Image.new("RGB", (final_width, final_height), color="white")
     draw = ImageDraw.Draw(final_img)
 
     # Paste each image and add label

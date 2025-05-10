@@ -28,31 +28,31 @@
 
  #include <stdio.h>
  #include <stdlib.h>
- 
+
  // Include the gem5 m5ops header file
  #include <gem5/m5ops.h>
- 
+
  int main(int argc, char *argv[])
  {
      if (argc < 2) {
          fprintf(stderr, "Usage: %s <MATSIZE> \n", argv[0]);
          return 1;
      }
-     
+
      const int size = atoi(argv[1]); // size (1D length) of matrices A, B and C
      int **A = malloc(size * sizeof(int *));
      int **B = malloc(size * sizeof(int *));
      int **C = malloc(size * sizeof(int *));
-     
+
      for (int i = 0; i < size; i++) {
          A[i] = malloc(size * sizeof(int));
          B[i] = malloc(size * sizeof(int));
          C[i] = malloc(size * sizeof(int));
      }
-     
+
      printf("[BASE matrix multiplication]\n");
      printf("matrix size: %d x %d\n", size, size);
- 
+
      printf("Populating matrices A and B...\n");
      for(int i = 0; i < size; i++)
      {
@@ -63,12 +63,12 @@
          }
      }
      printf("Done!\n");
- 
+
      printf("Multiplying the matrixes...\n");
- 
+
      m5_reset_stats(0, 0); // Reset statistics here
      //m5_work_begin(0, 0); // Reset statistics here
- 
+
      /* matrix multiplication with ijk */
      for(int i = 0; i < size; i++)
      {
@@ -82,20 +82,20 @@
              C[i][j] = sum;
          }
      }
-    
+
      m5_dump_stats(0, 0); // Dump statistics right after
 
      printf("Done!\n");
- 
+
      printf("Calculating the sum of all elements in the matrix...\n");
      long int sum = 0;
      for(int x = 0; x < size; x++)
          for(int y = 0; y < size; y++)
              sum += C[x][y];
      printf("Done\n");
- 
+
      printf("The sum is %ld\n", sum);
- 
+
      for (int i = 0; i < size; i++) {
          free(A[i]);
          free(B[i]);
@@ -105,4 +105,3 @@
      free(B);
      free(C);
  }
- 

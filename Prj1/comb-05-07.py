@@ -1,5 +1,10 @@
-from PIL import Image, ImageDraw, ImageFont
 import os
+
+from PIL import (
+    Image,
+    ImageDraw,
+    ImageFont,
+)
 
 image_files = [
     "plot_simInsts.png",
@@ -38,7 +43,7 @@ final_width = cols * img_width
 final_height = rows * (img_height + label_height)
 
 # Create a new blank white image
-final_img = Image.new('RGB', (final_width, final_height), color='white')
+final_img = Image.new("RGB", (final_width, final_height), color="white")
 draw = ImageDraw.Draw(final_img)
 
 # Paste each image and add label

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright (c) 2015 Jason Power
 # All rights reserved.
 #
@@ -33,18 +32,22 @@ line options from each individual class.
 """
 
 import m5
-from m5.objects import Cache, WriteAllocator
+from m5.objects import (
+    Cache,
+    WriteAllocator,
+)
 
 # Add the common scripts at configs/ to our path
 m5.util.addToPath("../configs/")
 
 from common import SimpleOpts
 
-from m5.objects.ReplacementPolicies import *
 from m5.objects.Prefetcher import *
+from m5.objects.ReplacementPolicies import *
 
 # Some specific options for caches
 # For all options see src/mem/cache/BaseCache.py
+
 
 class L1Cache(Cache):
     """Simple L1 Cache with default values"""
@@ -56,7 +59,7 @@ class L1Cache(Cache):
     tgts_per_mshr = 20
 
     def __init__(self, options=None):
-        super(L1Cache, self).__init__()
+        super().__init__()
         pass
 
     def connectBus(self, bus):
@@ -82,7 +85,7 @@ class L1ICache(L1Cache):
     )
 
     def __init__(self, opts=None):
-        super(L1ICache, self).__init__(opts)
+        super().__init__(opts)
         if not opts or not opts.l1i_size:
             return
         self.size = opts.l1i_size
@@ -111,20 +114,21 @@ class L1DCache(L1Cache):
     )
 
     SimpleOpts.add_option(
-        "--l1d_rp", help="L1D replacement policy: LRU, Random, FIFO, LFU, etc. Default: LRU"
+        "--l1d_rp",
+        help="L1D replacement policy: LRU, Random, FIFO, LFU, etc. Default: LRU",
     )
-    
+
     SimpleOpts.add_option(
         "--l1d_pf", help="L1D prefetcher: stride, tagged, etc. Default: NULL"
     )
-    
+
     SimpleOpts.add_option(
         "--l1d_wa", help="Enable L1D write allocator (true/false)"
     )
 
     def __init__(self, opts=None):
-        super(L1DCache, self).__init__(opts)
-        if not opts: # ensures no AttributeError
+        super().__init__(opts)
+        if not opts:  # ensures no AttributeError
             return
         if opts.l1d_size:
             self.size = opts.l1d_size
@@ -146,12 +150,12 @@ class L1DCache(L1Cache):
     def _parse_rp(self, name):
         """Parse the replacement policy name and return the corresponding object"""
         rp_map = {
-            'FIFO' : FIFORP(), 
-            'SecondChance' : SecondChanceRP(), 
-            'LFU' : LFURP(), 
-            'LRU' : LRURP(), 
-            'MRU' : MRURP(), 
-            'Random ': RandomRP(),
+            "FIFO": FIFORP(),
+            "SecondChance": SecondChanceRP(),
+            "LFU": LFURP(),
+            "LRU": LRURP(),
+            "MRU": MRURP(),
+            "Random ": RandomRP(),
         }
         return rp_map.get(name, LRURP())  # default to LRU if unknown
 

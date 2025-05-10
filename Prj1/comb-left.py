@@ -1,13 +1,21 @@
-from PIL import Image, ImageDraw, ImageFont
 import os
-from math import log2, floor
+from math import (
+    floor,
+    log2,
+)
+
+from PIL import (
+    Image,
+    ImageDraw,
+    ImageFont,
+)
 
 # Configuration
 matrix_sizes = [100, 128, 200, 256]
-cache_sizes = ['16kB', '32kB', '64kB']
+cache_sizes = ["16kB", "32kB", "64kB"]
 assocs = [1, 2, 4, 8]
-replacement_policies = ['FIFO', 'LFU', 'LRU', 'MRU', 'Random']
-axis_params = ['assoc', 'csize', 'rp']
+replacement_policies = ["FIFO", "LFU", "LRU", "MRU", "Random"]
+axis_params = ["assoc", "csize", "rp"]
 stat_label = "system.cpu.cpi.png"
 
 # Try to load a default font
@@ -21,13 +29,15 @@ for axis_param in axis_params:
     axis_root = f"plots/{axis_param}"
 
     # Build the other two parameter sets
-    if axis_param == 'assoc':
-        other_pairs = [(c, r) for c in cache_sizes for r in replacement_policies]
+    if axis_param == "assoc":
+        other_pairs = [
+            (c, r) for c in cache_sizes for r in replacement_policies
+        ]
         subdir_names = [f"{c}_{r}" for c, r in other_pairs]
-    elif axis_param == 'csize':
+    elif axis_param == "csize":
         other_pairs = [(a, r) for a in assocs for r in replacement_policies]
         subdir_names = [f"{a}_{r}" for a, r in other_pairs]
-    elif axis_param == 'rp':
+    elif axis_param == "rp":
         other_pairs = [(a, c) for a in assocs for c in cache_sizes]
         subdir_names = [f"{a}_{c}" for a, c in other_pairs]
     else:
@@ -50,7 +60,7 @@ for axis_param in axis_params:
     final_height = rows * img_height
 
     # Create a blank white canvas
-    final_img = Image.new('RGB', (final_width, final_height), color='white')
+    final_img = Image.new("RGB", (final_width, final_height), color="white")
     draw = ImageDraw.Draw(final_img)
 
     # Paste images

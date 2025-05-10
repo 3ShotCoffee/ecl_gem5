@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright (c) 2015 Jason Power
 # All rights reserved.
 #
@@ -57,10 +56,20 @@ from common import SimpleOpts
 default_binary = "/home/jhpark/gem5/Prj1/matmul-blocked"
 
 # Binary to execute
-SimpleOpts.add_option("binary", nargs="?", default=default_binary, help="Path to the binary to run.")
+SimpleOpts.add_option(
+    "binary",
+    nargs="?",
+    default=default_binary,
+    help="Path to the binary to run.",
+)
 
 # Command-line arguments for the binary
-SimpleOpts.add_option("bin_args", nargs=SimpleOpts.REMAINDER, default=[], help="Arguments to pass to the binary.")
+SimpleOpts.add_option(
+    "bin_args",
+    nargs=SimpleOpts.REMAINDER,
+    default=[],
+    help="Arguments to pass to the binary.",
+)
 
 # Finalize the arguments and grab the args so we can pass it on to our objects
 args = SimpleOpts.parse_args()

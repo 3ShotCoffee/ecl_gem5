@@ -1,7 +1,16 @@
-from PIL import Image, ImageDraw, ImageFont
 import os
+from math import (
+    floor,
+    log2,
+)
+
+from PIL import (
+    Image,
+    ImageDraw,
+    ImageFont,
+)
+
 from configs import *
-from math import log2, floor
 
 # Try to load a default font
 try:
@@ -13,7 +22,9 @@ images = []
 for axis_param in axis_params:
     plot_root = f"plots/{axis_param}"
     for msize in matrix_sizes:
-        img_path = os.path.join(plot_root, f"{msize}_base", "system.cpu.cpi.png")
+        img_path = os.path.join(
+            plot_root, f"{msize}_base", "system.cpu.cpi.png"
+        )
         if os.path.exists(img_path):
             idx = (0, matrix_sizes.index(msize))
             images.append((Image.open(img_path), idx))
@@ -21,7 +32,9 @@ for axis_param in axis_params:
         idx_x = 1
         while bsize <= msize:
             folder_suffix = f"{msize}_{bsize}"
-            img_path = os.path.join(plot_root, folder_suffix, "system.cpu.cpi.png")
+            img_path = os.path.join(
+                plot_root, folder_suffix, "system.cpu.cpi.png"
+            )
             if os.path.exists(img_path):
                 idx = (idx_x, matrix_sizes.index(msize))
                 images.append((Image.open(img_path), idx))
@@ -29,8 +42,8 @@ for axis_param in axis_params:
             idx_x += 1
 
     # Layout parameters
-    rows = len(matrix_sizes) # Number of rows
-    cols = floor(log2(matrix_sizes[-1])) - 2 # Number of columns
+    rows = len(matrix_sizes)  # Number of rows
+    cols = floor(log2(matrix_sizes[-1])) - 2  # Number of columns
     img_width, img_height = images[0][0].size
 
     # Final canvas size
@@ -38,7 +51,7 @@ for axis_param in axis_params:
     final_height = rows * img_height
 
     # Create a new blank white image
-    final_img = Image.new('RGB', (final_width, final_height), color='white')
+    final_img = Image.new("RGB", (final_width, final_height), color="white")
     draw = ImageDraw.Draw(final_img)
 
     # Paste each image and add label
