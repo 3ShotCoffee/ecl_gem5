@@ -11,17 +11,22 @@ from concurrent.futures import (
 
 from configs import (
     axis_params,
+    cache_sizes,
     block_sizes,
     init_block_sizes,
     matrix_sizes,
 )
 
+# Override configs for testing
+matrix_sizes = [512]
+axis_params = [cache_sizes, [1, 2]]
+
 init_block_sizes()
 
 gem5_exe = "../build/X86/gem5.opt"
-script = "testSims/system_l1_fastclk.py"
-out_root = "out-ps"
-max_workers = 10  # Adjust to use fewer cores if needed
+script = "system_l1.py"
+out_root = "out"
+max_workers = 24  # Adjust to use fewer cores if needed
 SUCCESS_STRING = "The sum is"
 
 
@@ -71,10 +76,10 @@ def main():
     start_time = time.time()
 
     # Clean output directory
-    if os.path.exists(out_root):
-        print(f"Removing existing output directory '{out_root}'...")
-        shutil.rmtree(out_root)
-    os.makedirs(out_root)
+    # if os.path.exists(out_root):
+    #     print(f"Removing existing output directory '{out_root}'...")
+    #     shutil.rmtree(out_root)
+    # os.makedirs(out_root)
 
     # Build the job list
     jobs = []

@@ -15,6 +15,7 @@ stat_labels = [
 ]
 axis_params = [cache_sizes, assocs]
 
+
 def init_block_sizes():
     """
     Initialize block sizes for each matrix size.

@@ -29,7 +29,7 @@ ISA = x86
 
 .DEFAULT_GOAL := matmul-base
 
-all: matmul-base matmul-blocked
+all: matmul-base matmul-blocked matmul-base-compute-only
 
 matmul-base:
 	gcc -o matmul-base matmul-base.c \
@@ -39,6 +39,12 @@ matmul-base:
 
 matmul-blocked:
 	gcc -o matmul-blocked matmul-blocked.c \
+	-I$(GEM5_PATH)/include \
+	-L$(GEM5_PATH)/util/m5/build/$(ISA)/out \
+	-lm5
+
+matmul-base-compute-only:
+	gcc -o matmul-base-compute-only matmul-base-compute-only.c \
 	-I$(GEM5_PATH)/include \
 	-L$(GEM5_PATH)/util/m5/build/$(ISA)/out \
 	-lm5

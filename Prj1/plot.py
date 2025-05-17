@@ -1,10 +1,17 @@
 import os
 import matplotlib.pyplot as plt
-from configs import matrix_sizes, block_sizes, assocs, cache_sizes, stat_labels, init_block_sizes
+
+from configs import (
+    assocs,
+    block_sizes,
+    cache_sizes,
+    init_block_sizes,
+    matrix_sizes,
+    stat_labels,
+)
 
 colors = ["red", "green", "blue", "orange", "purple", "cyan", "brown", "pink"]
 
-# Load stats
 def load_stats(path):
     stats = {}
     if not os.path.exists(path):
@@ -26,27 +33,26 @@ def load_stats(path):
                     continue
     return stats
 
+
 init_block_sizes()
 
 for msize in matrix_sizes:
     for assoc in assocs:
-        plot_dir = f"plots/"
-        os.makedirs(plot_dir, exist_ok=True)
-    
+        os.makedirs("plots/", exist_ok=True)
+
         for stat_label in stat_labels:
             plt.figure(figsize=(12, 6))
-            
-            x_vals = []
-            y_vals = []
 
-            for bsize in block_sizes[msize]:
+            for idx, bsize in enumerate(block_sizes[msize]):
+                x_vals = []
+                y_vals = []
+
                 for csize in cache_sizes:
-
                     if bsize == 0:
                         out_dir = f"out/{msize}_base/{csize}_{assoc}"
                     else:
                         out_dir = f"out/{msize}_{bsize}/{csize}_{assoc}"
-                        
+
                     stats = load_stats(os.path.join(out_dir, "stats.txt"))
                     if not stats:
                         print(f"Warning: No stats found for {out_dir}")
@@ -58,22 +64,24 @@ for msize in matrix_sizes:
                     x_vals.append(csize)
                     y_vals.append(stats[stat_label])
 
-                plt.plot(
-                    x_vals,
-                    y_vals,
-                    label="base" if bsize==0 else f"block size = {bsize}",
-                    color=colors[bsize % len(colors)],
-                    marker="o"
-                )
+                if x_vals and y_vals:  # Only plot if there's data
+                    plt.plot(
+                        x_vals,
+                        y_vals,
+                        label="base" if bsize == 0 else f"block size = {bsize}",
+                        color=colors[idx % len(colors)],
+                        marker="o",
+                    )
 
-                plt.xlabel("Cache Size")
-                plt.ylabel(stat_label)
-                plt.title(f"{stat_label} (matrix size = {msize}, assoc = {assoc})")                    
-                plt.legend()
-                plt.grid(True)
-                plt.tight_layout()
-                filename = rf"plots/{msize}_{assoc}_{stat_label.replace('::', '_')}.png"
-                plt.savefig(filename)
-                plt.close()
+            plt.xlabel("Cache Size")
+            plt.ylabel(stat_label)
+            plt.title(f"{stat_label} (matrix size = {msize}, assoc = {assoc})")
+            plt.legend()
+            plt.grid(True)
+            plt.tight_layout()
+
+            filename = f"plots/{msize}_{assoc}_{stat_label.replace('::', '_')}.png"
+            plt.savefig(filename)
+            plt.close()
 
 print("All plots generated: one per statistic.")
