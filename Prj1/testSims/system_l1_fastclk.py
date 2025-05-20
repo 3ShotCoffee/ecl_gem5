@@ -89,7 +89,7 @@ system.mem_ranges = [AddrRange("512MB")]  # Create an address range
 # Create a simple CPU
 system.cpu = X86TimingSimpleCPU()
 system.cpu.clk_domain = SrcClockDomain()
-system.cpu.clk_domain.clock = '1THz'
+system.cpu.clk_domain.clock = "1THz"
 system.cpu.clk_domain.voltage_domain = system.clk_domain.voltage_domain
 
 # Create an L1 instruction and data cach

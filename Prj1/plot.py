@@ -1,4 +1,5 @@
 import os
+
 import matplotlib.pyplot as plt
 
 from configs import (
@@ -10,7 +11,11 @@ from configs import (
     stat_labels,
 )
 
+out_root = "out"
+plot_root = "plots"
+
 colors = ["red", "green", "blue", "orange", "purple", "cyan", "brown", "pink"]
+
 
 def load_stats(path):
     stats = {}
@@ -38,7 +43,7 @@ init_block_sizes()
 
 for msize in matrix_sizes:
     for assoc in assocs:
-        os.makedirs("plots/", exist_ok=True)
+        os.makedirs(plot_root, exist_ok=True)
 
         for stat_label in stat_labels:
             plt.figure(figsize=(12, 6))
@@ -49,9 +54,13 @@ for msize in matrix_sizes:
 
                 for csize in cache_sizes:
                     if bsize == 0:
-                        out_dir = f"out/{msize}_base/{csize}_{assoc}"
+                        out_dir = os.path.join(
+                            out_root, f"{msize}_base/{csize}_{assoc}"
+                        )
                     else:
-                        out_dir = f"out/{msize}_{bsize}/{csize}_{assoc}"
+                        out_dir = os.path.join(
+                            out_root, f"{msize}_{bsize}/{csize}_{assoc}"
+                        )
 
                     stats = load_stats(os.path.join(out_dir, "stats.txt"))
                     if not stats:
@@ -68,7 +77,9 @@ for msize in matrix_sizes:
                     plt.plot(
                         x_vals,
                         y_vals,
-                        label="base" if bsize == 0 else f"block size = {bsize}",
+                        label=(
+                            "base" if bsize == 0 else f"block size = {bsize}"
+                        ),
                         color=colors[idx % len(colors)],
                         marker="o",
                     )
@@ -80,7 +91,10 @@ for msize in matrix_sizes:
             plt.grid(True)
             plt.tight_layout()
 
-            filename = f"plots/{msize}_{assoc}_{stat_label.replace('::', '_')}.png"
+            filename = os.path.join(
+                plot_root,
+                f"{msize}_{assoc}_{stat_label.replace('::', '_')}.png",
+            )
             plt.savefig(filename)
             plt.close()
 

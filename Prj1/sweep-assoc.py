@@ -11,15 +11,15 @@ from concurrent.futures import (
 
 from configs import (
     axis_params,
-    cache_sizes,
     block_sizes,
+    cache_sizes,
     init_block_sizes,
     matrix_sizes,
 )
 
 # Override configs for testing
 matrix_sizes = [512]
-axis_params = [cache_sizes, [1, 2]]
+axis_params = [cache_sizes, [4, 8]]
 
 init_block_sizes()
 

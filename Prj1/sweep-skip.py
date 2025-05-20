@@ -18,7 +18,7 @@ from configs import (
 
 init_block_sizes()
 
-gem5_exe = "../build/X86/gem5.opt" 
+gem5_exe = "../build/X86/gem5.opt"
 script = "system_l1.py"
 out_root = "out"
 max_workers = 20  # Adjust to use fewer cores if needed
@@ -81,7 +81,6 @@ def main():
                     jobs.append(job)
                 else:
                     print(f"✅ Skipping (directory exists): {outdir}")
-
 
     print(f"Total jobs to run: {len(jobs)}")
 
