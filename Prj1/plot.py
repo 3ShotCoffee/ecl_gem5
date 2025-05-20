@@ -9,13 +9,13 @@ from configs import (
     init_block_sizes,
     matrix_sizes,
     stat_labels,
+    stat_labels_rep,
 )
 
 out_root = "out"
 plot_root = "plots"
 
 colors = ["red", "green", "blue", "orange", "purple", "cyan", "brown", "pink"]
-
 
 def load_stats(path):
     stats = {}
@@ -37,7 +37,6 @@ def load_stats(path):
                 except ValueError:
                     continue
     return stats
-
 
 init_block_sizes()
 
@@ -93,7 +92,7 @@ for msize in matrix_sizes:
 
             filename = os.path.join(
                 plot_root,
-                f"{msize}_{assoc}_{stat_label.replace('::', '_')}.png",
+                f"{msize}_{assoc}_{stat_labels_rep[stat_label]}.png",
             )
             plt.savefig(filename)
             plt.close()
