@@ -71,10 +71,10 @@ def main():
     start_time = time.time()
 
     # Clean output directory
-    if os.path.exists(out_root):
-        print(f"Removing existing output directory '{out_root}'...")
-        shutil.rmtree(out_root)
-    os.makedirs(out_root)
+    # if os.path.exists(out_root):
+    #     print(f"Removing existing output directory '{out_root}'...")
+    #     shutil.rmtree(out_root)
+    # os.makedirs(out_root)
 
     # Build the job list
     jobs = []
