@@ -52,6 +52,7 @@ from caches_l1 import *
 from common import SimpleOpts
 
 # Default to running the m5ops version of x86-matrix-multiply from gem5-resources.
+# default_binary = obtain_resource("x86-matrix-multiply").get_local_path()
 default_binary = "/home/jhpark/gem5/Prj1/matmul-blocked"
 
 # Binary to execute
@@ -87,9 +88,6 @@ system.mem_ranges = [AddrRange("512MB")]  # Create an address range
 
 # Create a simple CPU
 system.cpu = X86TimingSimpleCPU()
-system.cpu.clk_domain = SrcClockDomain()
-system.cpu.clk_domain.clock = "1THz"
-system.cpu.clk_domain.voltage_domain = system.clk_domain.voltage_domain
 
 # Create an L1 instruction and data cach
 system.cpu.icache = L1ICache(args)
@@ -101,6 +99,9 @@ system.cpu.dcache.connectCPU(system.cpu)
 
 # Create a memory bus
 system.membus = SystemXBar()
+
+# Connect the L2 cache to the membus
+# system.l2cache.connectMemSideBus(system.membus)
 
 # Hook the CPU ports up to the membus
 system.cpu.icache.connectBus(system.membus)
@@ -136,6 +137,9 @@ system.cpu.createThreads()
 root = Root(full_system=False, system=system)
 # instantiate all of the objects we've created above
 m5.instantiate()
+
+# Prevent automatic stats dump on exit
+# m5.stats.set_no_dump_on_exit(True)
 
 print("Beginning simulation!")
 exit_event = m5.simulate()
