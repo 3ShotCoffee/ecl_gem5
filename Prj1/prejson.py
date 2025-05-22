@@ -18,7 +18,7 @@ matrix_sizes = [100, 128, 200, 256, 512]
 init_block_sizes()
 
 # Define search paths
-base_dirs = {"ns": "out", "ps": "out-ps"}
+base_dirs = {"ns": "out-ns", "ps": "out-ps"}
 
 # Initialize data structure for each metric
 metric_data = {short: [] for short in stat_labels_rep.values()}
@@ -41,7 +41,10 @@ def parse_stats(stats_path, stat_labels_rep):
 for dtype, base_dir in base_dirs.items():
     for msize in matrix_sizes:
         for bsize in block_sizes[msize]:
-            sim_dir = Path(base_dir) / f"{msize}_{bsize}"
+            if bsize == 0:
+                sim_dir = Path(base_dir) / f"{msize}_base"
+            else:
+                sim_dir = Path(base_dir) / f"{msize}_{bsize}"
             for csize in cache_sizes:
                 for assoc in assocs:
                     stat_path = sim_dir / f"{csize}_{assoc}" / "stats.txt"
