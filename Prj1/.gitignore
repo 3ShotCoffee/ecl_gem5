@@ -1,6 +1,10 @@
 out
+out-ns
 out-ps
 plots
+plots-ns
 plots-ps
 plots-old
+big_plots-ns
+big_plots-ps
 testSims/out
