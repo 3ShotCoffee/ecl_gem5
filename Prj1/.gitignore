@@ -8,3 +8,5 @@ plots-old
 big_plots-ns
 big_plots-ps
 testSims/out
+matmul-base
+matmul-blocked

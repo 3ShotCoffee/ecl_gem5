@@ -50,7 +50,6 @@
          B[i] = malloc(size * sizeof(int));
          C[i] = malloc(size * sizeof(int));
      }
-     //int A[size][size], B[size][size], C[size][size];
 
      printf("[BLOCKED matrix multiplication]\n");
      printf("matrix size: %d x %d\n", size, size);
@@ -74,6 +73,14 @@
      printf("Done!\n");
 
      printf("Multiplying the matrixes...\n");
+
+     printf("Thrashing the cache...\n");
+     int *trash = malloc(10 * 1024 * 1024); // 10 MB
+     for (int i = 0; i < (10 * 1024 * 1024) / sizeof(int); i++) {
+         trash[i] = i;
+     }
+     free(trash);
+     printf("Done!\n");
 
      m5_reset_stats(0, 0); // Reset statistics here
 

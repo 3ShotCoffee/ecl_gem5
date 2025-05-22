@@ -64,10 +64,17 @@
      }
      printf("Done!\n");
 
+     printf("Thrashing the cache...\n");
+     int *trash = malloc(10 * 1024 * 1024); // 10 MB
+     for (int i = 0; i < (10 * 1024 * 1024) / sizeof(int); i++) {
+         trash[i] = i;
+     }
+     free(trash);
+     printf("Done!\n");
+
      printf("Multiplying the matrixes...\n");
 
      m5_reset_stats(0, 0); // Reset statistics here
-     //m5_work_begin(0, 0); // Reset statistics here
 
      /* matrix multiplication with ijk */
      for(int i = 0; i < size; i++)
