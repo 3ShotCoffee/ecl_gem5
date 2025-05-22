@@ -34,22 +34,16 @@
 
  int main(int argc, char *argv[])
  {
-     if (argc < 3) {
-         fprintf(stderr, "Usage: %s <MATSIZE> <BSIZE>\n", argv[0]);
+     if (argc < 2) {
+         fprintf(stderr, "Usage: %s <MATSIZE> \n", argv[0]);
          return 1;
      }
 
      const int size = atoi(argv[1]); // size (1D length) of matrices A, B and C
      const int block_size = atoi(argv[2]); // Block size for cache optimization
-     int **A = malloc(size * sizeof(int *));
-     int **B = malloc(size * sizeof(int *));
-     int **C = malloc(size * sizeof(int *));
-
-     for (int i = 0; i < size; i++) {
-         A[i] = malloc(size * sizeof(int));
-         B[i] = malloc(size * sizeof(int));
-         C[i] = malloc(size * sizeof(int));
-     }
+     int *A = malloc(size * size * sizeof(int));
+     int *B = malloc(size * size * sizeof(int));
+     int *C = malloc(size * size * sizeof(int));
 
      printf("[BLOCKED matrix multiplication]\n");
      printf("matrix size: %d x %d\n", size, size);
@@ -60,19 +54,11 @@
      {
          for(int j = 0; j < size; j++)
          {
-             A[i][j] = i + j;
-             B[i][j] = (4 * i) + (7 * j);
+             A[i * size + j] = i + j;
+             B[i * size + j] = (4 * i) + (7 * j);
          }
      }
      printf("Done!\n");
-
-     printf("Initializing matrix C...\n");
-     for (int i = 0; i < size; i++)
-     for (int j = 0; j < size; j++)
-         C[i][j] = 0;
-     printf("Done!\n");
-
-     printf("Multiplying the matrixes...\n");
 
      printf("Thrashing the cache...\n");
      int *trash = malloc(10 * 1024 * 1024); // 10 MB
@@ -81,6 +67,8 @@
      }
      free(trash);
      printf("Done!\n");
+
+     printf("Multiplying the matrixes...\n");
 
      m5_reset_stats(0, 0); // Reset statistics here
 
@@ -91,9 +79,9 @@
                  for (int j = jj; j < jj + block_size && j < size; j++) {
                      int sum = 0;
                      for (int k = kk; k < kk + block_size && k < size; k++) {
-                         sum += A[i][k] * B[k][j];
+                         sum += A[i * size + k] * B[k * size + j];
                      }
-                     C[i][j] += sum;
+                     C[i * size + j] += sum;
                  }
              }
          }
@@ -107,19 +95,12 @@
      long int sum = 0;
      for(int x = 0; x < size; x++)
          for(int y = 0; y < size; y++)
-             sum += C[x][y];
+             sum += C[x * size + y];
      printf("Done\n");
 
      printf("The sum is %ld\n", sum);
-
-     for (int i = 0; i < size; i++) {
-         free(A[i]);
-         free(B[i]);
-         free(C[i]);
-     }
+     
      free(A);
      free(B);
      free(C);
-
-     return sum;
  }

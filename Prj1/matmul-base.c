@@ -40,15 +40,9 @@
      }
 
      const int size = atoi(argv[1]); // size (1D length) of matrices A, B and C
-     int **A = malloc(size * sizeof(int *));
-     int **B = malloc(size * sizeof(int *));
-     int **C = malloc(size * sizeof(int *));
-
-     for (int i = 0; i < size; i++) {
-         A[i] = malloc(size * sizeof(int));
-         B[i] = malloc(size * sizeof(int));
-         C[i] = malloc(size * sizeof(int));
-     }
+     int *A = malloc(size * size * sizeof(int));
+     int *B = malloc(size * size * sizeof(int));
+     int *C = malloc(size * size * sizeof(int));
 
      printf("[BASE matrix multiplication]\n");
      printf("matrix size: %d x %d\n", size, size);
@@ -58,8 +52,8 @@
      {
          for(int j = 0; j < size; j++)
          {
-             A[i][j] = i + j;
-             B[i][j] = (4 * i) + (7 * j);
+             A[i * size + j] = i + j;
+             B[i * size + j] = (4 * i) + (7 * j);
          }
      }
      printf("Done!\n");
@@ -84,9 +78,9 @@
              int sum = 0;
              for(int k = 0; k < size; k++)
              {
-                 sum += A[i][k] * B[k][j];
+                 sum += A[i * size + k] * B[k * size + j];
              }
-             C[i][j] = sum;
+             C[i * size + j] = sum;
          }
      }
 
@@ -98,16 +92,11 @@
      long int sum = 0;
      for(int x = 0; x < size; x++)
          for(int y = 0; y < size; y++)
-             sum += C[x][y];
+             sum += C[x * size + y];
      printf("Done\n");
 
      printf("The sum is %ld\n", sum);
-
-     for (int i = 0; i < size; i++) {
-         free(A[i]);
-         free(B[i]);
-         free(C[i]);
-     }
+     
      free(A);
      free(B);
      free(C);

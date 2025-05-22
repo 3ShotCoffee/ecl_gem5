@@ -42,7 +42,7 @@ matmul-blocked:
 	-I$(GEM5_PATH)/include \
 	-L$(GEM5_PATH)/util/m5/build/$(ISA)/out \
 	-lm5
-
+	
 clean:
 	- rm matmul-base
 	- rm matmul-blocked
