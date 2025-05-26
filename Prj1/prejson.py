@@ -12,13 +12,9 @@ from configs import (
     block_sizes,
 )
 
-# Until 1024 is done
-matrix_sizes = [100, 128, 200, 256, 512]
-
 init_block_sizes()
 
-# Define search paths
-base_dirs = {"ns": "out-ns", "ps": "out-ps"}
+base_dir = "out"
 
 # Initialize data structure for each metric
 metric_data = {short: [] for short in stat_labels_rep.values()}
@@ -38,27 +34,25 @@ def parse_stats(stats_path, stat_labels_rep):
     return values
 
 # Traverse directories and collect data
-for dtype, base_dir in base_dirs.items():
-    for msize in matrix_sizes:
-        for bsize in block_sizes[msize]:
-            if bsize == 0:
-                sim_dir = Path(base_dir) / f"{msize}_base"
-            else:
-                sim_dir = Path(base_dir) / f"{msize}_{bsize}"
-            for csize in cache_sizes:
-                for assoc in assocs:
-                    stat_path = sim_dir / f"{csize}_{assoc}" / "stats.txt"
-                    stats = parse_stats(stat_path, stat_labels_rep)
-                    if stats:
-                        for key, val in stats.items():
-                            metric_data[key].append({
-                                "matrix": msize,
-                                "block": bsize,
-                                "cache": csize,
-                                "assoc": assoc,
-                                "type": dtype,
-                                "value": val
-                            })
+for msize in matrix_sizes:
+    for bsize in block_sizes[msize]:
+        if bsize == 0:
+            sim_dir = Path(base_dir) / f"{msize}_base"
+        else:
+            sim_dir = Path(base_dir) / f"{msize}_{bsize}"
+        for csize in cache_sizes:
+            for assoc in assocs:
+                stat_path = sim_dir / f"{csize}_{assoc}" / "stats.txt"
+                stats = parse_stats(stat_path, stat_labels_rep)
+                if stats:
+                    for key, val in stats.items():
+                        metric_data[key].append({
+                            "matrix": msize,
+                            "block": bsize,
+                            "cache": csize,
+                            "assoc": assoc,
+                            "value": val
+                        })
 
 # Write each metric to its own JSON file
 output_dir = Path("metric_jsons")

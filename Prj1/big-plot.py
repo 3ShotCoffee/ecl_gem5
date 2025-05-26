@@ -14,18 +14,18 @@ from configs import (
 
 # Static configuration
 metric_json_dir = "metric_jsons"
+output_dir = "big_plots"
 cache_size_order = {cs: i for i, cs in enumerate(cache_sizes)}
-matrix_sizes = [100, 128, 200, 256, 512]
 
 def load_metric_data(metric):
     with open(os.path.join(metric_json_dir, f"{metric}.json")) as f:
         return json.load(f)
 
-def plot_metric(metric, run_type, output_dir):
+def plot_metric(metric, output_dir):
     data = load_metric_data(metric)
     fig, axes = plt.subplots(len(matrix_sizes), len(assocs),
                              figsize=(14, 18), sharex=True, sharey=False)
-    fig.suptitle(f"Metric: {metric} ({run_type})", fontsize=20)
+    fig.suptitle(f"Metric: {metric}", fontsize=20)
 
     for row_idx, msize in enumerate(matrix_sizes):
         for col_idx, assoc in enumerate(assocs):
@@ -34,8 +34,6 @@ def plot_metric(metric, run_type, output_dir):
 
             for entry in data:
                 if entry["matrix"] != msize or entry["assoc"] != assoc:
-                    continue
-                if entry["type"] != run_type:
                     continue
                 curves.setdefault(entry["block"], []).append((entry["cache"], entry["value"]))
 
@@ -57,17 +55,12 @@ def plot_metric(metric, run_type, output_dir):
     plt.close()
 
 def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--type", choices=["ns", "ps"], required=True, help="Choose run type to plot: ns or ps")
-    args = parser.parse_args()
-
-    output_dir = f"big_plots{'-ps' if args.type == 'ps' else '-ns'}"
     os.makedirs(output_dir, exist_ok=True)
 
     for fname in os.listdir(metric_json_dir):
         if fname.endswith(".json"):
             metric = fname[:-5]
-            plot_metric(metric, args.type, output_dir)
+            plot_metric(metric, output_dir)
 
     print(f"Plots saved in {output_dir}")
 

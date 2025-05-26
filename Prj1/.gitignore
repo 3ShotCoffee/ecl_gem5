@@ -1,12 +1,12 @@
-out
-out-ns
-out-ps
-plots
-plots-ns
-plots-ps
-plots-old
-big_plots-ns
-big_plots-ps
+# outs
+out*
+# plots
+plots*
+big_plots*
+# small-batch tests
 testSims/out
+miniTests
+# workload binaries
 matmul-base
 matmul-blocked
+matmul-blocked-full
