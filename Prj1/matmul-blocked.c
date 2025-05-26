@@ -35,7 +35,7 @@
  int main(int argc, char *argv[])
  {
      if (argc < 2) {
-         fprintf(stderr, "Usage: %s <MATSIZE> \n", argv[0]);
+         fprintf(stderr, "Usage: %s <MATSIZE> <BLOCKSIZE>\n", argv[0]);
          return 1;
      }
 
@@ -72,7 +72,7 @@
 
      m5_reset_stats(0, 0); // Reset statistics here
 
-     /* blocked matrix multiplication with ijk */
+     /* blocked matrix multiplication over jk */
      for (int jj = 0; jj < size; jj += block_size) {
          for (int kk = 0; kk < size; kk += block_size) {
              for (int i = 0; i < size; i++) {
