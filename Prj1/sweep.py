@@ -16,37 +16,26 @@ from configs import (
     matrix_sizes,
 )
 
+matrix_sizes = [100, 128, 200, 256, 512]
 init_block_sizes()
 
 gem5_exe = "../build/X86/gem5.opt"
-script = "testSims/system_l1_fastclk.py"
-out_root = "out-ps"
-max_workers = 10  # Adjust to use fewer cores if needed
+script = "system_l1.py"
+out_root = "out-full"
+max_workers = 22  # Adjust to use fewer cores if needed
 SUCCESS_STRING = "The sum is"
 
 
 def construct_job(msize, bsize, csize, assoc):
-
-    if bsize != 0:
-        # Blocked
-        outdir = os.path.join(out_root, f"{msize}_{bsize}/{csize}_{assoc}")
-        args = [
-            f"--l1d_size={csize}",
-            f"--l1d_assoc={assoc}",
-            "matmul-blocked",
-            str(msize),
-            str(bsize),
-        ]
-    else:
-        # Base
-        outdir = os.path.join(out_root, f"{msize}_base/{csize}_{assoc}")
-        args = [
-            f"--l1d_size={csize}",
-            f"--l1d_assoc={assoc}",
-            "matmul-base",
-            str(msize),
-        ]
-
+    # Construct job for blocked matrix multiplication (over ijk)
+    outdir = os.path.join(out_root, f"{msize}_{bsize}/{csize}_{assoc}")
+    args = [
+        f"--l1d_size={csize}",
+        f"--l1d_assoc={assoc}",
+        "matmul-blocked-full",
+        str(msize),
+        str(bsize),
+    ]
     return (outdir, args)
 
 
@@ -70,18 +59,14 @@ def run_simulation(job):
 def main():
     start_time = time.time()
 
-    # Clean output directory
-    # if os.path.exists(out_root):
-    #     print(f"Removing existing output directory '{out_root}'...")
-    #     shutil.rmtree(out_root)
-    # os.makedirs(out_root)
-
     # Build the job list
     jobs = []
     for size, assoc in itertools.product(*axis_params):
         for msize in matrix_sizes:
             for bsize in block_sizes[msize]:
-                jobs.append(construct_job(msize, bsize, size, assoc))
+                if bsize != 0:
+                    # Skip base
+                    jobs.append(construct_job(msize, bsize, size, assoc))
 
     print(f"Total jobs to run: {len(jobs)}")
 
