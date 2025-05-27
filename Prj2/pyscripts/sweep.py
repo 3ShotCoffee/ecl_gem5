@@ -81,9 +81,9 @@ def main():
 
     # Build the job list
     jobs = []
-    for csize, assoc in itertools.product(*axis_params):
-        for config in test_configs:
-            for bsize in block_sizes[config[0]]:
+    for config in test_configs:
+        for bsize in block_sizes[config[0]]:
+            for csize, assoc in itertools.product(*axis_params):
                 jobs.append(construct_job(csize, assoc, bsize, config))
 
     print(f"Total jobs to run: {len(jobs)}")
