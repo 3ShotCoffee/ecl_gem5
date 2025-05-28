@@ -10,41 +10,50 @@ from concurrent.futures import (
 )
 
 from configs import (
-    axis_params,
+    seq_lens,
     block_sizes,
     init_block_sizes,
-    matrix_sizes,
+    axis_params,
+    test_configs,
 )
 
+# matrix_sizes = [1024]
+# axis_params = [["64kB"], [4, 8]]  # Cache sizes and associativity
 init_block_sizes()
 
-gem5_exe = "../build/X86/gem5.opt"
+gem5_exe = "../../build/X86/gem5.opt"
 script = "system_l1.py"
-out_root = "out"
-max_workers = 20  # Adjust to use fewer cores if needed
-SUCCESS_STRING = "The sum is"
+out_root = "../out"
+workload = "../workload/attention"
+max_workers = 22  # Adjust to use fewer cores if needed
+SUCCESS_STRING = "Checksum"
 
 
-def construct_job(msize, bsize, csize, assoc):
-
-    if bsize != 0:
-        # Blocked
-        outdir = os.path.join(out_root, f"{msize}_{bsize}/{csize}_{assoc}")
+def construct_job(csize, assoc, bsize, config):
+    if bsize == 0:
+        # Construct job for matrix multiplication with no tiling
+        outdir = os.path.join(out_root, f"{config[0]}-{config[1]}-{config[2]}_base/{csize}_{assoc}")
         args = [
             f"--l1d_size={csize}",
             f"--l1d_assoc={assoc}",
-            "matmul-blocked",
-            str(msize),
-            str(bsize),
+            workload,
+            str(config[0]),  # sequence length
+            str(config[1]),  # hidden dimension
+            str(config[2]),  # number of heads
+            "base",
         ]
     else:
-        # Base
-        outdir = os.path.join(out_root, f"{msize}_base/{csize}_{assoc}")
+        # Construct job for blocked matrix multiplication (over ijk)
+        outdir = os.path.join(out_root, f"{config[0]}-{config[1]}-{config[2]}_{bsize}/{csize}_{assoc}")
         args = [
             f"--l1d_size={csize}",
             f"--l1d_assoc={assoc}",
-            "matmul-base",
-            str(msize),
+            workload,
+            str(config[0]),  # sequence length
+            str(config[1]),  # hidden dimension
+            str(config[2]),  # number of heads
+            "blocked",
+            str(bsize),  
         ]
 
     return (outdir, args)
@@ -72,16 +81,10 @@ def main():
 
     # Build the job list
     jobs = []
-    for size, assoc in itertools.product(*axis_params):
-        for msize in matrix_sizes:
-            for bsize in block_sizes[msize]:
-                job = construct_job(msize, bsize, size, assoc)
-                outdir = job[0]
-                stats_path = os.path.join(outdir, "stats.txt")
-                if not os.path.isfile(stats_path) or os.path.getsize(stats_path) == 0:
-                    jobs.append(job)
-                else:
-                    print(f"✅ Skipping (stats.txt exists and is non-empty): {outdir}")
+    for config in test_configs:
+        for bsize in block_sizes[config[0]]:
+            for csize, assoc in itertools.product(*axis_params):
+                jobs.append(construct_job(csize, assoc, bsize, config))
 
     print(f"Total jobs to run: {len(jobs)}")
 

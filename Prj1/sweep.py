@@ -16,7 +16,6 @@ from configs import (
     matrix_sizes,
 )
 
-matrix_sizes = [100, 128, 200, 256, 512]
 init_block_sizes()
 
 gem5_exe = "../build/X86/gem5.opt"
@@ -61,9 +60,9 @@ def main():
 
     # Build the job list
     jobs = []
-    for size, assoc in itertools.product(*axis_params):
-        for msize in matrix_sizes:
-            for bsize in block_sizes[msize]:
+    for msize in matrix_sizes:
+        for bsize in block_sizes[msize]:
+            for size, assoc in itertools.product(*axis_params):
                 if bsize != 0:
                     # Skip base
                     jobs.append(construct_job(msize, bsize, size, assoc))

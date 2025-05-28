@@ -10,41 +10,54 @@ from concurrent.futures import (
 )
 
 from configs import (
-    axis_params,
+    seq_lens,
     block_sizes,
     init_block_sizes,
-    matrix_sizes,
+    axis_params,
+    test_configs,
 )
+
+test_configs = [    # A list of (seq_len, hidden_dim, heads) tuples
+    [64, 128, 8],       # Lightweight test
+    [128, 256, 8],      # Still lightweight, but more expressive
+    [128, 768, 12],     # Mirrors DistilBERT
+]
 
 init_block_sizes()
 
-gem5_exe = "../build/X86/gem5.opt"
+gem5_exe = "../../build/X86/gem5.opt"
 script = "system_l1.py"
-out_root = "out"
-max_workers = 20  # Adjust to use fewer cores if needed
-SUCCESS_STRING = "The sum is"
+out_root = "../out"
+workload = "../workload/attention"
+max_workers = 22  # Adjust to use fewer cores if needed
+SUCCESS_STRING = "Checksum"
+END_STRING = "End Simulation Statistics"
 
-
-def construct_job(msize, bsize, csize, assoc):
-
-    if bsize != 0:
-        # Blocked
-        outdir = os.path.join(out_root, f"{msize}_{bsize}/{csize}_{assoc}")
+def construct_job(csize, assoc, bsize, config):
+    if bsize == 0:
+        # Construct job for matrix multiplication with no tiling
+        outdir = os.path.join(out_root, f"{config[0]}-{config[1]}-{config[2]}_base/{csize}_{assoc}")
         args = [
             f"--l1d_size={csize}",
             f"--l1d_assoc={assoc}",
-            "matmul-blocked",
-            str(msize),
-            str(bsize),
+            workload,
+            str(config[0]),  # sequence length
+            str(config[1]),  # hidden dimension
+            str(config[2]),  # number of heads
+            "base",
         ]
     else:
-        # Base
-        outdir = os.path.join(out_root, f"{msize}_base/{csize}_{assoc}")
+        # Construct job for blocked matrix multiplication (over ijk)
+        outdir = os.path.join(out_root, f"{config[0]}-{config[1]}-{config[2]}_{bsize}/{csize}_{assoc}")
         args = [
             f"--l1d_size={csize}",
             f"--l1d_assoc={assoc}",
-            "matmul-base",
-            str(msize),
+            workload,
+            str(config[0]),  # sequence length
+            str(config[1]),  # hidden dimension
+            str(config[2]),  # number of heads
+            "blocked",
+            str(bsize),  
         ]
 
     return (outdir, args)
@@ -72,20 +85,28 @@ def main():
 
     # Build the job list
     jobs = []
-    for size, assoc in itertools.product(*axis_params):
-        for msize in matrix_sizes:
-            for bsize in block_sizes[msize]:
-                job = construct_job(msize, bsize, size, assoc)
+    for config in test_configs:
+        for bsize in block_sizes[config[0]]:
+            for csize, assoc in itertools.product(*axis_params):
+                job = construct_job(csize, assoc, bsize, config)
                 outdir = job[0]
                 stats_path = os.path.join(outdir, "stats.txt")
-                if not os.path.isfile(stats_path) or os.path.getsize(stats_path) == 0:
+                should_run = True
+                if os.path.isfile(stats_path):
+                    with open(stats_path, 'r') as f:
+                        count = sum(1 for line in f if END_STRING in line)
+                    if count >= 2:
+                        should_run = False
+
+                if should_run:
                     jobs.append(job)
                 else:
-                    print(f"✅ Skipping (stats.txt exists and is non-empty): {outdir}")
+                    print(f"✅ Skipping (stats.txt has ≥2 END_STRING): {outdir}")
 
     print(f"Total jobs to run: {len(jobs)}")
 
     completed = 0
+    failed_jobs = []
     try:
         with ProcessPoolExecutor(max_workers=max_workers) as executor:
             futures = {
@@ -102,9 +123,7 @@ def main():
                     )
                 except Exception as e:
                     print(f"\n❌ Error: {e}")
-                    print("Aborting remaining simulations...")
-                    executor.shutdown(wait=False, cancel_futures=True)
-                    raise SystemExit(1)
+                    failed_jobs.append(job[0])
 
     except CancelledError:
         print("Execution was cancelled.")
@@ -113,6 +132,8 @@ def main():
     print(
         f"\nTotal runtime: {total_time:.2f} seconds ({total_time/60:.2f} minutes)"
     )
+
+    print(f"\nCompleted {completed} jobs, failed {len(failed_jobs)} jobs.")
 
 
 if __name__ == "__main__":
