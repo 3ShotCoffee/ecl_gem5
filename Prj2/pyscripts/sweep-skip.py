@@ -17,8 +17,12 @@ from configs import (
     test_configs,
 )
 
-# matrix_sizes = [1024]
-# axis_params = [["64kB"], [4, 8]]  # Cache sizes and associativity
+test_configs = [    # A list of (seq_len, hidden_dim, heads) tuples
+    [64, 128, 8],       # Lightweight test
+    [128, 256, 8],      # Still lightweight, but more expressive
+    [128, 768, 12],     # Mirrors DistilBERT
+]
+
 init_block_sizes()
 
 gem5_exe = "../../build/X86/gem5.opt"
@@ -102,6 +106,7 @@ def main():
     print(f"Total jobs to run: {len(jobs)}")
 
     completed = 0
+    failed_jobs = []
     try:
         with ProcessPoolExecutor(max_workers=max_workers) as executor:
             futures = {
@@ -118,9 +123,7 @@ def main():
                     )
                 except Exception as e:
                     print(f"\n❌ Error: {e}")
-                    print("Aborting remaining simulations...")
-                    executor.shutdown(wait=False, cancel_futures=True)
-                    raise SystemExit(1)
+                    failed_jobs.append(job[0])
 
     except CancelledError:
         print("Execution was cancelled.")
@@ -129,6 +132,8 @@ def main():
     print(
         f"\nTotal runtime: {total_time:.2f} seconds ({total_time/60:.2f} minutes)"
     )
+
+    print(f"\nCompleted {completed} jobs, failed {len(failed_jobs)} jobs.")
 
 
 if __name__ == "__main__":
