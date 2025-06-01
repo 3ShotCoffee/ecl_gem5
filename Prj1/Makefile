@@ -43,8 +43,8 @@ matmul-blocked:
 	-L$(GEM5_PATH)/util/m5/build/$(ISA)/out \
 	-lm5
 	
-matmul-blocked-full:
-	gcc -O2 -o matmul-blocked-full matmul-blocked-full.c \
+matmul-oblivious:
+	gcc -O2 -o matmul-oblivious matmul-oblivious.c \
 	-I$(GEM5_PATH)/include \
 	-L$(GEM5_PATH)/util/m5/build/$(ISA)/out \
 	-lm5
