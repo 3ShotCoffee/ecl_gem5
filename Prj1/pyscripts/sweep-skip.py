@@ -63,8 +63,6 @@ def run_simulation(job):
             cmd, stdout=log_file, stderr=subprocess.STDOUT, text=True
         )
 
-    result = subprocess.run(cmd, capture_output=True, text=True)
-
     if result.returncode != 0:
         raise RuntimeError(f"Simulation failed (non-zero exit): {outdir}")
 
@@ -102,8 +100,6 @@ def main():
                     )
 
     print(f"Total jobs to run: {len(jobs)}")
-
-    exit(1)  # Uncomment to exit early for testing
 
     completed = 0
     try:

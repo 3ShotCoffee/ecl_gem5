@@ -57,8 +57,6 @@ def run_simulation(job):
             cmd, stdout=log_file, stderr=subprocess.STDOUT, text=True
         )
 
-    # result = subprocess.run(cmd, capture_output=True, text=True)
-
     if result.returncode != 0:
         raise RuntimeError(f"Simulation failed (non-zero exit): {outdir}")
 

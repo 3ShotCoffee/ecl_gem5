@@ -57,8 +57,6 @@ from common import SimpleOpts
 # Default to running the m5ops version of x86-matrix-multiply from gem5-resources.
 default_binary = "/home/jhpark/gem5/Prj1/matmul-blocked"
 
-exit(1)
-
 num_channels = 4  # Number of DRAM channels
 total_mem_size = 512 * 1024 * 1024  # 512MB
 channel_size = total_mem_size // num_channels

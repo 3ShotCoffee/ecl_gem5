@@ -31,8 +31,6 @@ max_workers = 20  # Adjust to use fewer cores if needed
 SUCCESS_STRING = "The sum is"
 END_STRING = "End Simulation Statistics"
 
-exit(1)
-
 def construct_job(msize, bsize, csize, ch):
 
     if bsize != 0:
@@ -71,8 +69,6 @@ def run_simulation(job):
         result = subprocess.run(
             cmd, stdout=log_file, stderr=subprocess.STDOUT, text=True
         )
-
-    result = subprocess.run(cmd, capture_output=True, text=True)
 
     if result.returncode != 0:
         raise RuntimeError(f"Simulation failed (non-zero exit): {outdir}")
