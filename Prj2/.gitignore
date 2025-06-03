@@ -1,4 +1,11 @@
-out
+__pycache__
+# output directories
+**/out/
+# small-batch tests
 miniTests
-workload/attention
-
+# workload binaries
+attention
+# utility helper scripts
+util/
+# Other miscellaneous files
+nohup.out

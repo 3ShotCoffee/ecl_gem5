@@ -1,8 +1,6 @@
-# outs
-out*
-# plots
-plots*
-big_plots*
+__pycache__
+# output directories
+**/out/
 # small-batch tests
 testSims/out
 miniTests
@@ -10,3 +8,6 @@ miniTests
 matmul-base
 matmul-blocked
 matmul-blocked-full
+matmul-oblivious
+# utility helper scripts
+util/

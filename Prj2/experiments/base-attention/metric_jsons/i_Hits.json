@@ -1,0 +1,1129 @@
+[
+  {
+    "config": "64-128-8",
+    "block": 0,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 52135319.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 0,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 52135319.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 0,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 52135319.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 0,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 52135319.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 0,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 52135319.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 0,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 52135319.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 16,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 60224315.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 16,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 60224315.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 16,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 60224315.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 16,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 60224315.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 16,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 60224315.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 16,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 60224315.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 32,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 58082147.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 32,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 58082147.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 32,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 58082147.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 32,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 58082147.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 32,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 58082147.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 32,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 58082147.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 64,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 57116711.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 64,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 57116711.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 64,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 57116711.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 64,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 57116711.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 64,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 57116711.0
+  },
+  {
+    "config": "64-128-8",
+    "block": 64,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 57116711.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 0,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 399156334.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 0,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 399156334.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 0,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 399156334.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 0,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 399156334.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 0,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 399156334.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 0,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 399156334.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 16,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 468125116.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 16,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 468125116.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 16,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 468125116.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 16,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 468125116.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 16,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 468125116.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 16,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 468125116.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 32,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 449169676.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 32,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 449169676.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 32,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 449169676.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 32,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 449169676.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 32,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 449169676.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 32,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 449169676.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 64,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 441516340.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 64,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 441516340.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 64,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 441516340.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 64,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 441516340.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 64,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 441516340.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 64,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 441516340.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 128,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 437887480.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 128,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 437887480.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 128,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 437887480.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 128,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 437887480.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 128,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 437887480.0
+  },
+  {
+    "config": "128-256-8",
+    "block": 128,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 437887480.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 0,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 2986914312.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 0,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 2986914312.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 0,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 2986914312.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 0,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 2986914312.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 0,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 2986914312.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 0,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 2986914312.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 16,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 3587276558.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 16,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 3587276558.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 16,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 3587276558.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 16,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 3587276558.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 16,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 3587276558.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 16,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 3587276558.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 32,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 3429380622.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 32,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 3429380622.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 32,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 3429380622.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 32,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 3429380622.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 32,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 3429380622.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 32,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 3429380622.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 64,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 3358259774.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 64,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 3358259774.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 64,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 3358259774.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 64,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 3358259774.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 64,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 3358259774.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 64,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 3358259774.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 128,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 3325844070.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 128,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 3325844070.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 128,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 3325844070.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 128,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 3325844070.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 128,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 3325844070.0
+  },
+  {
+    "config": "128-768-12",
+    "block": 128,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 3325844070.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 0,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 3050402612.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 0,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 3050402612.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 0,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 3050402612.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 0,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 3050402612.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 0,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 3050402612.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 0,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 3050402612.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 16,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 3622105530.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 16,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 3622105530.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 16,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 3622105530.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 16,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 3622105530.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 16,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 3622105530.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 16,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 3622105530.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 32,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 3468095322.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 32,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 3468095322.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 32,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 3468095322.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 32,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 3468095322.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 32,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 3468095322.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 32,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 3468095322.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 64,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 3399291978.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 64,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 3399291978.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 64,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 3399291978.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 64,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 3399291978.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 64,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 3399291978.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 64,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 3399291978.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 128,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 3370275970.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 128,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 3370275970.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 128,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 3370275970.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 128,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 3370275970.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 128,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 3370275970.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 128,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 3370275970.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 256,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 3356178294.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 256,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 3356178294.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 256,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 3356178294.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 256,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 3356178294.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 256,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 3356178294.0
+  },
+  {
+    "config": "256-512-8",
+    "block": 256,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 3356178294.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 0,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 24364908683.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 0,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 24364908683.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 0,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 24364908683.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 0,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 24364908683.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 0,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 24364908683.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 0,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 24364908683.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 16,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 28972203618.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 16,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 28972203618.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 16,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 28972203618.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 16,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 28972203618.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 16,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 28972203618.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 16,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 28972203618.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 32,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 27740315170.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 32,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 27740315170.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 32,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 27740315170.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 32,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 27740315170.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 32,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 27740315170.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 32,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 27740315170.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 64,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 27189940866.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 64,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 27189940866.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 64,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 27189940866.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 64,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 27189940866.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 64,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 27189940866.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 64,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 27189940866.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 128,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 26957827250.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 128,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 26957827250.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 128,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 26957827250.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 128,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 26957827250.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 128,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 26957827250.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 128,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 26957827250.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 256,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 26845050858.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 256,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 26845050858.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 256,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 26845050858.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 256,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 26845050858.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 256,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 26845050858.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 256,
+    "cache": "64kB",
+    "assoc": 8,
+    "value": 26845050858.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 512,
+    "cache": "16kB",
+    "assoc": 4,
+    "value": 26789467310.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 512,
+    "cache": "16kB",
+    "assoc": 8,
+    "value": 26789467310.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 512,
+    "cache": "32kB",
+    "assoc": 4,
+    "value": 26789467310.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 512,
+    "cache": "32kB",
+    "assoc": 8,
+    "value": 26789467310.0
+  },
+  {
+    "config": "512-1024-16",
+    "block": 512,
+    "cache": "64kB",
+    "assoc": 4,
+    "value": 26789467310.0
+  }
+]

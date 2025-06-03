@@ -10,10 +10,9 @@ from concurrent.futures import (
 )
 
 from configs import (
-    seq_lens,
+    axis_params,
     block_sizes,
     init_block_sizes,
-    axis_params,
     test_configs,
 )
 
@@ -32,7 +31,10 @@ SUCCESS_STRING = "Checksum"
 def construct_job(csize, assoc, bsize, config):
     if bsize == 0:
         # Construct job for matrix multiplication with no tiling
-        outdir = os.path.join(out_root, f"{config[0]}-{config[1]}-{config[2]}_base/{csize}_{assoc}")
+        outdir = os.path.join(
+            out_root,
+            f"{config[0]}-{config[1]}-{config[2]}_base/{csize}_{assoc}",
+        )
         args = [
             f"--l1d_size={csize}",
             f"--l1d_assoc={assoc}",
@@ -44,7 +46,10 @@ def construct_job(csize, assoc, bsize, config):
         ]
     else:
         # Construct job for blocked matrix multiplication (over ijk)
-        outdir = os.path.join(out_root, f"{config[0]}-{config[1]}-{config[2]}_{bsize}/{csize}_{assoc}")
+        outdir = os.path.join(
+            out_root,
+            f"{config[0]}-{config[1]}-{config[2]}_{bsize}/{csize}_{assoc}",
+        )
         args = [
             f"--l1d_size={csize}",
             f"--l1d_assoc={assoc}",
@@ -53,7 +58,7 @@ def construct_job(csize, assoc, bsize, config):
             str(config[1]),  # hidden dimension
             str(config[2]),  # number of heads
             "blocked",
-            str(bsize),  
+            str(bsize),
         ]
 
     return (outdir, args)

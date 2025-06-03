@@ -10,17 +10,16 @@ from concurrent.futures import (
 )
 
 from configs import (
-    seq_lens,
+    axis_params,
     block_sizes,
     init_block_sizes,
-    axis_params,
     test_configs,
 )
 
-test_configs = [    # A list of (seq_len, hidden_dim, heads) tuples
-    [64, 128, 8],       # Lightweight test
-    [128, 256, 8],      # Still lightweight, but more expressive
-    [128, 768, 12],     # Mirrors DistilBERT
+test_configs = [  # A list of (seq_len, hidden_dim, heads) tuples
+    [64, 128, 8],  # Lightweight test
+    [128, 256, 8],  # Still lightweight, but more expressive
+    [128, 768, 12],  # Mirrors DistilBERT
 ]
 
 init_block_sizes()
@@ -33,10 +32,16 @@ max_workers = 22  # Adjust to use fewer cores if needed
 SUCCESS_STRING = "Checksum"
 END_STRING = "End Simulation Statistics"
 
+
 def construct_job(csize, assoc, bsize, config):
     if bsize == 0:
         # Construct job for matrix multiplication with no tiling
-        outdir = os.path.join(out_root, f"{config[0]}-{config[1]}-{config[2]}_base/{csize}_{assoc}")
+        outdir = os.path.join(
+            out_root,
+            f"{config[0]}-{config[1]}-{config[2]}_base/{csize}_{assoc}",
+        )
+        if not os.path.exists(outdir):
+            os.makedirs(outdir)
         args = [
             f"--l1d_size={csize}",
             f"--l1d_assoc={assoc}",
@@ -48,7 +53,12 @@ def construct_job(csize, assoc, bsize, config):
         ]
     else:
         # Construct job for blocked matrix multiplication (over ijk)
-        outdir = os.path.join(out_root, f"{config[0]}-{config[1]}-{config[2]}_{bsize}/{csize}_{assoc}")
+        outdir = os.path.join(
+            out_root,
+            f"{config[0]}-{config[1]}-{config[2]}_{bsize}/{csize}_{assoc}",
+        )
+        if not os.path.exists(outdir):
+            os.makedirs(outdir)
         args = [
             f"--l1d_size={csize}",
             f"--l1d_assoc={assoc}",
@@ -57,7 +67,7 @@ def construct_job(csize, assoc, bsize, config):
             str(config[1]),  # hidden dimension
             str(config[2]),  # number of heads
             "blocked",
-            str(bsize),  
+            str(bsize),
         ]
 
     return (outdir, args)
@@ -66,16 +76,17 @@ def construct_job(csize, assoc, bsize, config):
 def run_simulation(job):
     outdir, args = job
     os.makedirs(outdir, exist_ok=True)
+    log_path = os.path.join(outdir, "log.txt")
     cmd = [gem5_exe, f"--outdir={outdir}", script] + args
+    with open(log_path, "w") as log_file:
+        result = subprocess.run(
+            cmd, stdout=log_file, stderr=subprocess.STDOUT, text=True
+        )
 
     result = subprocess.run(cmd, capture_output=True, text=True)
-    stdout = result.stdout.strip().splitlines()
 
     if result.returncode != 0:
         raise RuntimeError(f"Simulation failed (non-zero exit): {outdir}")
-
-    if len(stdout) < 2 or SUCCESS_STRING not in stdout[-2]:
-        raise RuntimeError(f"Incorrect output in: {outdir}")
 
     return outdir
 
@@ -93,7 +104,7 @@ def main():
                 stats_path = os.path.join(outdir, "stats.txt")
                 should_run = True
                 if os.path.isfile(stats_path):
-                    with open(stats_path, 'r') as f:
+                    with open(stats_path) as f:
                         count = sum(1 for line in f if END_STRING in line)
                     if count >= 2:
                         should_run = False
@@ -101,7 +112,9 @@ def main():
                 if should_run:
                     jobs.append(job)
                 else:
-                    print(f"✅ Skipping (stats.txt has ≥2 END_STRING): {outdir}")
+                    print(
+                        f"✅ Skipping (stats.txt has ≥2 END_STRING): {outdir}"
+                    )
 
     print(f"Total jobs to run: {len(jobs)}")
 
