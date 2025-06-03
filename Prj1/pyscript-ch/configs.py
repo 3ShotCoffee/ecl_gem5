@@ -1,7 +1,7 @@
+matrix_sizes = [200, 256, 512, 1024]
 block_sizes = {}
 cache_sizes = ["16kB", "32kB", "64kB"]
-assocs = [4, 8]
-axis_params = [cache_sizes, assocs]
+num_channels = [4, 8, 16]
 stat_labels = [
     "simTicks",
     "simInsts",
@@ -28,28 +28,17 @@ stat_labels_rep = {
     "system.cpu.icache.demandAccesses::total": "i_Accesses",
     "system.cpu.icache.demandMissRate::total": "i_MissRate",
 }
-test_configs = [  # A list of (seq_len, hidden_dim, heads) tuples
-    [64, 128, 8],  # Lightweight test
-    [128, 256, 8],  # Still lightweight, but more expressive
-    [128, 768, 12],  # Mirrors DistilBERT
-    [256, 512, 8],  # Higher sequence, lower hidden
-    [512, 1024, 16],  # Mirrors BERT-Large
-]
+axis_params = [cache_sizes, num_channels]
 
 
 def init_block_sizes():
     """
-    Initialize block sizes for each sequence length (shorter side of the matrix).
+    Initialize block sizes for each matrix size.
     """
-    for config in test_configs:
-        seq_len = config[0]
+    for msize in matrix_sizes:
         bsize = 16
         bsizes = [0]
-        while bsize <= seq_len:
+        while bsize <= msize:
             bsizes.append(bsize)
             bsize *= 2
-        block_sizes[seq_len] = bsizes
-
-
-init_block_sizes()
-print("Block sizes initialized:", block_sizes)
+        block_sizes[msize] = bsizes

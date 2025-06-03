@@ -1,4 +1,6 @@
 out
 miniTests
 workload/attention
-
+nohup.out
+big_plots
+util/

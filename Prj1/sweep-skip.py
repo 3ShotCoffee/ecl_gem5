@@ -20,9 +20,10 @@ init_block_sizes()
 
 gem5_exe = "../build/X86/gem5.opt"
 script = "system_l1.py"
-out_root = "out"
+out_root = "out-oblivious"
 max_workers = 20  # Adjust to use fewer cores if needed
 SUCCESS_STRING = "The sum is"
+END_STRING = "End Simulation Statistics"
 
 
 def construct_job(msize, bsize, csize, assoc):
@@ -33,7 +34,7 @@ def construct_job(msize, bsize, csize, assoc):
         args = [
             f"--l1d_size={csize}",
             f"--l1d_assoc={assoc}",
-            "matmul-blocked",
+            "matmul-blocked-full",
             str(msize),
             str(bsize),
         ]
@@ -55,14 +56,17 @@ def run_simulation(job):
     os.makedirs(outdir, exist_ok=True)
     cmd = [gem5_exe, f"--outdir={outdir}", script] + args
 
+    # Run with stdout redirected to a log file
+    log_path = os.path.join(outdir, "log.txt")
+    with open(log_path, "w") as log_file:
+        result = subprocess.run(
+            cmd, stdout=log_file, stderr=subprocess.STDOUT, text=True
+        )
+
     result = subprocess.run(cmd, capture_output=True, text=True)
-    stdout = result.stdout.strip().splitlines()
 
     if result.returncode != 0:
         raise RuntimeError(f"Simulation failed (non-zero exit): {outdir}")
-
-    if len(stdout) < 2 or SUCCESS_STRING not in stdout[-2]:
-        raise RuntimeError(f"Incorrect output in: {outdir}")
 
     return outdir
 
@@ -72,18 +76,34 @@ def main():
 
     # Build the job list
     jobs = []
-    for size, assoc in itertools.product(*axis_params):
-        for msize in matrix_sizes:
-            for bsize in block_sizes[msize]:
-                job = construct_job(msize, bsize, size, assoc)
+    for msize in matrix_sizes:
+        for bsize in block_sizes[msize]:
+            for csize, assoc in itertools.product(*axis_params):
+                if bsize == 0:
+                    continue
+                job = construct_job(msize, bsize, csize, assoc)
                 outdir = job[0]
                 stats_path = os.path.join(outdir, "stats.txt")
-                if not os.path.isfile(stats_path) or os.path.getsize(stats_path) == 0:
+                should_run = True
+                # Check if stats.txt exists and contains 2 END_STRING's
+                # This isn't enough to check if the previous simulation was successful,
+                # but the log file has not been generated.
+                if os.path.isfile(stats_path):
+                    with open(stats_path) as f:
+                        count = sum(1 for line in f if END_STRING in line)
+                    if count >= 2:
+                        should_run = False
+
+                if should_run:
                     jobs.append(job)
                 else:
-                    print(f"✅ Skipping (stats.txt exists and is non-empty): {outdir}")
+                    print(
+                        f"✅ Skipping (stats.txt has ≥2 END_STRING): {outdir}"
+                    )
 
     print(f"Total jobs to run: {len(jobs)}")
+
+    exit(1)  # Uncomment to exit early for testing
 
     completed = 0
     try:

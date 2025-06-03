@@ -1,0 +1,1640 @@
+[
+  {
+    "matrix": 200,
+    "block": 0,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 709.476487
+  },
+  {
+    "matrix": 200,
+    "block": 0,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 709.125268
+  },
+  {
+    "matrix": 200,
+    "block": 0,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 708.936109
+  },
+  {
+    "matrix": 200,
+    "block": 0,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 610.135939
+  },
+  {
+    "matrix": 200,
+    "block": 0,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 610.054238
+  },
+  {
+    "matrix": 200,
+    "block": 0,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 609.892636
+  },
+  {
+    "matrix": 200,
+    "block": 0,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 610.164202
+  },
+  {
+    "matrix": 200,
+    "block": 0,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 610.050777
+  },
+  {
+    "matrix": 200,
+    "block": 0,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 609.878655
+  },
+  {
+    "matrix": 200,
+    "block": 16,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 116.316272
+  },
+  {
+    "matrix": 200,
+    "block": 16,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 115.716881
+  },
+  {
+    "matrix": 200,
+    "block": 16,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 115.477668
+  },
+  {
+    "matrix": 200,
+    "block": 16,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 105.950375
+  },
+  {
+    "matrix": 200,
+    "block": 16,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 105.389711
+  },
+  {
+    "matrix": 200,
+    "block": 16,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 105.186916
+  },
+  {
+    "matrix": 200,
+    "block": 16,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 46.798527
+  },
+  {
+    "matrix": 200,
+    "block": 16,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 46.616288
+  },
+  {
+    "matrix": 200,
+    "block": 16,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 46.488811
+  },
+  {
+    "matrix": 200,
+    "block": 32,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 79.278167
+  },
+  {
+    "matrix": 200,
+    "block": 32,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 78.376453
+  },
+  {
+    "matrix": 200,
+    "block": 32,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 78.103146
+  },
+  {
+    "matrix": 200,
+    "block": 32,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 61.369438
+  },
+  {
+    "matrix": 200,
+    "block": 32,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 61.110356
+  },
+  {
+    "matrix": 200,
+    "block": 32,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 60.907796
+  },
+  {
+    "matrix": 200,
+    "block": 32,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 42.694705
+  },
+  {
+    "matrix": 200,
+    "block": 32,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 42.435291
+  },
+  {
+    "matrix": 200,
+    "block": 32,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 42.271264
+  },
+  {
+    "matrix": 200,
+    "block": 64,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 709.464871
+  },
+  {
+    "matrix": 200,
+    "block": 64,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 706.147659
+  },
+  {
+    "matrix": 200,
+    "block": 64,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 699.086002
+  },
+  {
+    "matrix": 200,
+    "block": 64,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 55.866434
+  },
+  {
+    "matrix": 200,
+    "block": 64,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 52.933467
+  },
+  {
+    "matrix": 200,
+    "block": 64,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 49.083286
+  },
+  {
+    "matrix": 200,
+    "block": 64,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 40.977653
+  },
+  {
+    "matrix": 200,
+    "block": 64,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 39.621649
+  },
+  {
+    "matrix": 200,
+    "block": 64,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 38.713818
+  },
+  {
+    "matrix": 200,
+    "block": 128,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 707.741192
+  },
+  {
+    "matrix": 200,
+    "block": 128,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 707.032983
+  },
+  {
+    "matrix": 200,
+    "block": 128,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 706.181642
+  },
+  {
+    "matrix": 200,
+    "block": 128,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 620.633575
+  },
+  {
+    "matrix": 200,
+    "block": 128,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 619.961466
+  },
+  {
+    "matrix": 200,
+    "block": 128,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 619.171706
+  },
+  {
+    "matrix": 200,
+    "block": 128,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 615.328315
+  },
+  {
+    "matrix": 200,
+    "block": 128,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 614.490071
+  },
+  {
+    "matrix": 200,
+    "block": 128,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 613.44804
+  },
+  {
+    "matrix": 256,
+    "block": 0,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9827.285497
+  },
+  {
+    "matrix": 256,
+    "block": 0,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9827.219377
+  },
+  {
+    "matrix": 256,
+    "block": 0,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9827.118723
+  },
+  {
+    "matrix": 256,
+    "block": 0,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9827.036543
+  },
+  {
+    "matrix": 256,
+    "block": 0,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9826.956725
+  },
+  {
+    "matrix": 256,
+    "block": 0,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9826.862966
+  },
+  {
+    "matrix": 256,
+    "block": 0,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9779.153929
+  },
+  {
+    "matrix": 256,
+    "block": 0,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9779.018371
+  },
+  {
+    "matrix": 256,
+    "block": 0,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9778.895007
+  },
+  {
+    "matrix": 256,
+    "block": 16,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 5181.74227
+  },
+  {
+    "matrix": 256,
+    "block": 16,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 5181.600843
+  },
+  {
+    "matrix": 256,
+    "block": 16,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 5181.278162
+  },
+  {
+    "matrix": 256,
+    "block": 16,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 112.606234
+  },
+  {
+    "matrix": 256,
+    "block": 16,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 112.635971
+  },
+  {
+    "matrix": 256,
+    "block": 16,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 112.393859
+  },
+  {
+    "matrix": 256,
+    "block": 16,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 88.764498
+  },
+  {
+    "matrix": 256,
+    "block": 16,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 88.896065
+  },
+  {
+    "matrix": 256,
+    "block": 16,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 88.58207
+  },
+  {
+    "matrix": 256,
+    "block": 32,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9450.209072
+  },
+  {
+    "matrix": 256,
+    "block": 32,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9448.628801
+  },
+  {
+    "matrix": 256,
+    "block": 32,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9448.041147
+  },
+  {
+    "matrix": 256,
+    "block": 32,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 2742.746106
+  },
+  {
+    "matrix": 256,
+    "block": 32,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 2741.145831
+  },
+  {
+    "matrix": 256,
+    "block": 32,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 2740.331127
+  },
+  {
+    "matrix": 256,
+    "block": 32,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 1349.574762
+  },
+  {
+    "matrix": 256,
+    "block": 32,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 1348.981081
+  },
+  {
+    "matrix": 256,
+    "block": 32,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 1348.86514
+  },
+  {
+    "matrix": 256,
+    "block": 64,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9663.743806
+  },
+  {
+    "matrix": 256,
+    "block": 64,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9663.488224
+  },
+  {
+    "matrix": 256,
+    "block": 64,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9663.277804
+  },
+  {
+    "matrix": 256,
+    "block": 64,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9663.380636
+  },
+  {
+    "matrix": 256,
+    "block": 64,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9663.091982
+  },
+  {
+    "matrix": 256,
+    "block": 64,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9662.881776
+  },
+  {
+    "matrix": 256,
+    "block": 64,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9580.512706
+  },
+  {
+    "matrix": 256,
+    "block": 64,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9579.112932
+  },
+  {
+    "matrix": 256,
+    "block": 64,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9578.935964
+  },
+  {
+    "matrix": 256,
+    "block": 128,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9763.074848
+  },
+  {
+    "matrix": 256,
+    "block": 128,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9763.009076
+  },
+  {
+    "matrix": 256,
+    "block": 128,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9762.914189
+  },
+  {
+    "matrix": 256,
+    "block": 128,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9761.229438
+  },
+  {
+    "matrix": 256,
+    "block": 128,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9761.099149
+  },
+  {
+    "matrix": 256,
+    "block": 128,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9760.969913
+  },
+  {
+    "matrix": 256,
+    "block": 128,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9702.406328
+  },
+  {
+    "matrix": 256,
+    "block": 128,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9702.217557
+  },
+  {
+    "matrix": 256,
+    "block": 128,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9702.069739
+  },
+  {
+    "matrix": 256,
+    "block": 256,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9813.590191
+  },
+  {
+    "matrix": 256,
+    "block": 256,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9813.529405
+  },
+  {
+    "matrix": 256,
+    "block": 256,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9813.411059
+  },
+  {
+    "matrix": 256,
+    "block": 256,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9813.407537
+  },
+  {
+    "matrix": 256,
+    "block": 256,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9813.366702
+  },
+  {
+    "matrix": 256,
+    "block": 256,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9813.254843
+  },
+  {
+    "matrix": 256,
+    "block": 256,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9764.127369
+  },
+  {
+    "matrix": 256,
+    "block": 256,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9764.031434
+  },
+  {
+    "matrix": 256,
+    "block": 256,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9763.842521
+  },
+  {
+    "matrix": 512,
+    "block": 0,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9840.13165
+  },
+  {
+    "matrix": 512,
+    "block": 0,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9840.129655
+  },
+  {
+    "matrix": 512,
+    "block": 0,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9840.113941
+  },
+  {
+    "matrix": 512,
+    "block": 0,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9840.102368
+  },
+  {
+    "matrix": 512,
+    "block": 0,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9840.092341
+  },
+  {
+    "matrix": 512,
+    "block": 0,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9840.071022
+  },
+  {
+    "matrix": 512,
+    "block": 0,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9816.322268
+  },
+  {
+    "matrix": 512,
+    "block": 0,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9816.388801
+  },
+  {
+    "matrix": 512,
+    "block": 0,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9816.352943
+  },
+  {
+    "matrix": 512,
+    "block": 16,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9004.891456
+  },
+  {
+    "matrix": 512,
+    "block": 16,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9004.61152
+  },
+  {
+    "matrix": 512,
+    "block": 16,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9004.590453
+  },
+  {
+    "matrix": 512,
+    "block": 16,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 5157.211648
+  },
+  {
+    "matrix": 512,
+    "block": 16,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 5157.203658
+  },
+  {
+    "matrix": 512,
+    "block": 16,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 5157.151681
+  },
+  {
+    "matrix": 512,
+    "block": 16,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 2607.698608
+  },
+  {
+    "matrix": 512,
+    "block": 16,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 2607.669906
+  },
+  {
+    "matrix": 512,
+    "block": 16,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 2607.634403
+  },
+  {
+    "matrix": 512,
+    "block": 32,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9433.03574
+  },
+  {
+    "matrix": 512,
+    "block": 32,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9432.439685
+  },
+  {
+    "matrix": 512,
+    "block": 32,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9432.263297
+  },
+  {
+    "matrix": 512,
+    "block": 32,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9432.182158
+  },
+  {
+    "matrix": 512,
+    "block": 32,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9431.395943
+  },
+  {
+    "matrix": 512,
+    "block": 32,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9431.156217
+  },
+  {
+    "matrix": 512,
+    "block": 32,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9335.559961
+  },
+  {
+    "matrix": 512,
+    "block": 32,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9335.039262
+  },
+  {
+    "matrix": 512,
+    "block": 32,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9334.977517
+  },
+  {
+    "matrix": 512,
+    "block": 64,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9652.667753
+  },
+  {
+    "matrix": 512,
+    "block": 64,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9652.507365
+  },
+  {
+    "matrix": 512,
+    "block": 64,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9652.423598
+  },
+  {
+    "matrix": 512,
+    "block": 64,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9652.355583
+  },
+  {
+    "matrix": 512,
+    "block": 64,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9652.170064
+  },
+  {
+    "matrix": 512,
+    "block": 64,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9652.070988
+  },
+  {
+    "matrix": 512,
+    "block": 64,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9595.171762
+  },
+  {
+    "matrix": 512,
+    "block": 64,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9594.19451
+  },
+  {
+    "matrix": 512,
+    "block": 64,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9593.810801
+  },
+  {
+    "matrix": 512,
+    "block": 128,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9754.977823
+  },
+  {
+    "matrix": 512,
+    "block": 128,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9754.937836
+  },
+  {
+    "matrix": 512,
+    "block": 128,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9754.8537
+  },
+  {
+    "matrix": 512,
+    "block": 128,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9753.468718
+  },
+  {
+    "matrix": 512,
+    "block": 128,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9753.439383
+  },
+  {
+    "matrix": 512,
+    "block": 128,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9753.366919
+  },
+  {
+    "matrix": 512,
+    "block": 128,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9715.600199
+  },
+  {
+    "matrix": 512,
+    "block": 128,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9715.437248
+  },
+  {
+    "matrix": 512,
+    "block": 128,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9715.3457
+  },
+  {
+    "matrix": 512,
+    "block": 256,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9805.360688
+  },
+  {
+    "matrix": 512,
+    "block": 256,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9805.338798
+  },
+  {
+    "matrix": 512,
+    "block": 256,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9805.298033
+  },
+  {
+    "matrix": 512,
+    "block": 256,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9805.283899
+  },
+  {
+    "matrix": 512,
+    "block": 256,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9805.257454
+  },
+  {
+    "matrix": 512,
+    "block": 256,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9805.226375
+  },
+  {
+    "matrix": 512,
+    "block": 256,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9776.980489
+  },
+  {
+    "matrix": 512,
+    "block": 256,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9776.944122
+  },
+  {
+    "matrix": 512,
+    "block": 256,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9776.856521
+  },
+  {
+    "matrix": 512,
+    "block": 512,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9833.196447
+  },
+  {
+    "matrix": 512,
+    "block": 512,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9833.168887
+  },
+  {
+    "matrix": 512,
+    "block": 512,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9833.141497
+  },
+  {
+    "matrix": 512,
+    "block": 512,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9833.154634
+  },
+  {
+    "matrix": 512,
+    "block": 512,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9833.13045
+  },
+  {
+    "matrix": 512,
+    "block": 512,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9833.104344
+  },
+  {
+    "matrix": 512,
+    "block": 512,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9808.779127
+  },
+  {
+    "matrix": 512,
+    "block": 512,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9808.804656
+  },
+  {
+    "matrix": 512,
+    "block": 512,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9808.781758
+  },
+  {
+    "matrix": 1024,
+    "block": 0,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9857.127687
+  },
+  {
+    "matrix": 1024,
+    "block": 0,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9857.125403
+  },
+  {
+    "matrix": 1024,
+    "block": 0,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9857.112478
+  },
+  {
+    "matrix": 1024,
+    "block": 0,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9846.836362
+  },
+  {
+    "matrix": 1024,
+    "block": 0,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9846.786764
+  },
+  {
+    "matrix": 1024,
+    "block": 0,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9846.778339
+  },
+  {
+    "matrix": 1024,
+    "block": 0,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9835.006968
+  },
+  {
+    "matrix": 1024,
+    "block": 0,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9835.004705
+  },
+  {
+    "matrix": 1024,
+    "block": 0,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9834.993465
+  },
+  {
+    "matrix": 1024,
+    "block": 16,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9009.189541
+  },
+  {
+    "matrix": 1024,
+    "block": 16,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9009.167632
+  },
+  {
+    "matrix": 1024,
+    "block": 16,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9009.085894
+  },
+  {
+    "matrix": 1024,
+    "block": 16,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9000.738243
+  },
+  {
+    "matrix": 1024,
+    "block": 16,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9000.784787
+  },
+  {
+    "matrix": 1024,
+    "block": 16,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9000.685351
+  },
+  {
+    "matrix": 1024,
+    "block": 16,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 8862.888208
+  },
+  {
+    "matrix": 1024,
+    "block": 16,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 8862.847412
+  },
+  {
+    "matrix": 1024,
+    "block": 16,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 8862.818071
+  },
+  {
+    "matrix": 1024,
+    "block": 32,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9437.522722
+  },
+  {
+    "matrix": 1024,
+    "block": 32,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9437.121666
+  },
+  {
+    "matrix": 1024,
+    "block": 32,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9437.172876
+  },
+  {
+    "matrix": 1024,
+    "block": 32,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9423.906312
+  },
+  {
+    "matrix": 1024,
+    "block": 32,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9423.650927
+  },
+  {
+    "matrix": 1024,
+    "block": 32,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9423.631944
+  },
+  {
+    "matrix": 1024,
+    "block": 32,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9344.153501
+  },
+  {
+    "matrix": 1024,
+    "block": 32,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9343.579376
+  },
+  {
+    "matrix": 1024,
+    "block": 32,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9343.455942
+  },
+  {
+    "matrix": 1024,
+    "block": 64,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9658.538243
+  },
+  {
+    "matrix": 1024,
+    "block": 64,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9658.475843
+  },
+  {
+    "matrix": 1024,
+    "block": 64,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9658.44058
+  },
+  {
+    "matrix": 1024,
+    "block": 64,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9646.704123
+  },
+  {
+    "matrix": 1024,
+    "block": 64,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9646.628305
+  },
+  {
+    "matrix": 1024,
+    "block": 64,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9646.593406
+  },
+  {
+    "matrix": 1024,
+    "block": 64,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9601.121485
+  },
+  {
+    "matrix": 1024,
+    "block": 64,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9600.903572
+  },
+  {
+    "matrix": 1024,
+    "block": 64,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9600.844761
+  },
+  {
+    "matrix": 1024,
+    "block": 128,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9761.095325
+  },
+  {
+    "matrix": 1024,
+    "block": 128,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9761.061856
+  },
+  {
+    "matrix": 1024,
+    "block": 128,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9761.002887
+  },
+  {
+    "matrix": 1024,
+    "block": 128,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9750.046969
+  },
+  {
+    "matrix": 1024,
+    "block": 128,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9750.028644
+  },
+  {
+    "matrix": 1024,
+    "block": 128,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9749.976827
+  },
+  {
+    "matrix": 1024,
+    "block": 128,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9722.382991
+  },
+  {
+    "matrix": 1024,
+    "block": 128,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9722.324251
+  },
+  {
+    "matrix": 1024,
+    "block": 128,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9722.239179
+  },
+  {
+    "matrix": 1024,
+    "block": 256,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9811.552631
+  },
+  {
+    "matrix": 1024,
+    "block": 256,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9811.555793
+  },
+  {
+    "matrix": 1024,
+    "block": 256,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9811.525788
+  },
+  {
+    "matrix": 1024,
+    "block": 256,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9800.89832
+  },
+  {
+    "matrix": 1024,
+    "block": 256,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9800.901102
+  },
+  {
+    "matrix": 1024,
+    "block": 256,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9800.872717
+  },
+  {
+    "matrix": 1024,
+    "block": 256,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9783.17129
+  },
+  {
+    "matrix": 1024,
+    "block": 256,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9783.154112
+  },
+  {
+    "matrix": 1024,
+    "block": 256,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9783.111271
+  },
+  {
+    "matrix": 1024,
+    "block": 512,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9839.533248
+  },
+  {
+    "matrix": 1024,
+    "block": 512,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9839.523534
+  },
+  {
+    "matrix": 1024,
+    "block": 512,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9839.507566
+  },
+  {
+    "matrix": 1024,
+    "block": 512,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9829.121695
+  },
+  {
+    "matrix": 1024,
+    "block": 512,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9829.10809
+  },
+  {
+    "matrix": 1024,
+    "block": 512,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9829.097738
+  },
+  {
+    "matrix": 1024,
+    "block": 512,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9815.163819
+  },
+  {
+    "matrix": 1024,
+    "block": 512,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9815.147445
+  },
+  {
+    "matrix": 1024,
+    "block": 512,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9815.135122
+  },
+  {
+    "matrix": 1024,
+    "block": 1024,
+    "cache": "16kB",
+    "channels": 4,
+    "value": 9853.585872
+  },
+  {
+    "matrix": 1024,
+    "block": 1024,
+    "cache": "16kB",
+    "channels": 8,
+    "value": 9853.575964
+  },
+  {
+    "matrix": 1024,
+    "block": 1024,
+    "cache": "16kB",
+    "channels": 16,
+    "value": 9853.570251
+  },
+  {
+    "matrix": 1024,
+    "block": 1024,
+    "cache": "32kB",
+    "channels": 4,
+    "value": 9843.36104
+  },
+  {
+    "matrix": 1024,
+    "block": 1024,
+    "cache": "32kB",
+    "channels": 8,
+    "value": 9843.329694
+  },
+  {
+    "matrix": 1024,
+    "block": 1024,
+    "cache": "32kB",
+    "channels": 16,
+    "value": 9843.319197
+  },
+  {
+    "matrix": 1024,
+    "block": 1024,
+    "cache": "64kB",
+    "channels": 4,
+    "value": 9831.202373
+  },
+  {
+    "matrix": 1024,
+    "block": 1024,
+    "cache": "64kB",
+    "channels": 8,
+    "value": 9831.21375
+  },
+  {
+    "matrix": 1024,
+    "block": 1024,
+    "cache": "64kB",
+    "channels": 16,
+    "value": 9831.1868
+  }
+]

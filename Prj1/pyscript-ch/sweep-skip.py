@@ -10,14 +10,13 @@ from concurrent.futures import (
 )
 
 from configs import (
-    cache_sizes,
     block_sizes,
+    cache_sizes,
     init_block_sizes,
     matrix_sizes,
+    num_channels,
 )
 
-matrix_sizes = [200, 256, 512, 1024]
-num_channels = [4, 8, 16]
 init_block_sizes()
 
 gem5_exe = "../build/X86/gem5.opt"
@@ -63,7 +62,9 @@ def run_simulation(job):
     # Run with stdout redirected to a log file
     log_path = os.path.join(outdir, "log.txt")
     with open(log_path, "w") as log_file:
-        result = subprocess.run(cmd, stdout=log_file, stderr=subprocess.STDOUT, text=True)
+        result = subprocess.run(
+            cmd, stdout=log_file, stderr=subprocess.STDOUT, text=True
+        )
 
     result = subprocess.run(cmd, capture_output=True, text=True)
 
@@ -90,7 +91,7 @@ def main():
                     # This isn't enough to check if the simulation was successful,
                     # but the log file has not been generated.
                     if os.path.isfile(stats_path):
-                        with open(stats_path, 'r') as f:
+                        with open(stats_path) as f:
                             count = sum(1 for line in f if END_STRING in line)
                         if count >= 2:
                             should_run = False
@@ -98,7 +99,9 @@ def main():
                     if should_run:
                         jobs.append(job)
                     else:
-                        print(f"✅ Skipping (stats.txt has ≥2 END_STRING): {outdir}")
+                        print(
+                            f"✅ Skipping (stats.txt has ≥2 END_STRING): {outdir}"
+                        )
 
     print(f"Total jobs to run: {len(jobs)}")
 

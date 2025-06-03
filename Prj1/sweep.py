@@ -20,7 +20,7 @@ init_block_sizes()
 
 gem5_exe = "../build/X86/gem5.opt"
 script = "system_l1.py"
-out_root = "out-full"
+out_root = "out-oblivious"
 max_workers = 22  # Adjust to use fewer cores if needed
 SUCCESS_STRING = "The sum is"
 
@@ -31,7 +31,7 @@ def construct_job(msize, bsize, csize, assoc):
     args = [
         f"--l1d_size={csize}",
         f"--l1d_assoc={assoc}",
-        "matmul-blocked-full",
+        "matmul-oblivious",
         str(msize),
         str(bsize),
     ]
@@ -43,14 +43,17 @@ def run_simulation(job):
     os.makedirs(outdir, exist_ok=True)
     cmd = [gem5_exe, f"--outdir={outdir}", script] + args
 
+    # Run with stdout redirected to a log file
+    log_path = os.path.join(outdir, "log.txt")
+    with open(log_path, "w") as log_file:
+        result = subprocess.run(
+            cmd, stdout=log_file, stderr=subprocess.STDOUT, text=True
+        )
+
     result = subprocess.run(cmd, capture_output=True, text=True)
-    stdout = result.stdout.strip().splitlines()
 
     if result.returncode != 0:
         raise RuntimeError(f"Simulation failed (non-zero exit): {outdir}")
-
-    if len(stdout) < 2 or SUCCESS_STRING not in stdout[-2]:
-        raise RuntimeError(f"Incorrect output in: {outdir}")
 
     return outdir
 

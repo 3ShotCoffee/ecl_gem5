@@ -38,11 +38,11 @@
  #include <gem5/m5ops.h>
 
  // Base case size — small enough to fit in L1
-#define BASE 16
+int base = 16;
 
 // Cache-oblivious recursive matrix multiplication
 void matmul_rec(int *A, int *B, int *C, int a_row, int a_col, int b_row, int b_col, int c_row, int c_col, int n, int N) {
-    if (n <= BASE) {
+    if (n <= base) {
         for (int i = 0; i < n; ++i)
             for (int j = 0; j < n; ++j)
                 for (int k = 0; k < n; ++k)
@@ -72,14 +72,14 @@ void matmul_rec(int *A, int *B, int *C, int a_row, int a_col, int b_row, int b_c
      }
 
      const int size = atoi(argv[1]); // size (1D length) of matrices A, B and C
-     const int block_size = atoi(argv[2]); // Block size for cache optimization
+     base = atoi(argv[2]); // Block size for cache optimization
      int *A = malloc(size * size * sizeof(int));
      int *B = malloc(size * size * sizeof(int));
      int *C = malloc(size * size * sizeof(int));
 
-     printf("[BLOCKED matrix multiplication]\n");
+     printf("[Cache-oblivious matrix multiplication]\n");
      printf("matrix size: %d x %d\n", size, size);
-     printf("block size: %d\n", block_size);
+     printf("base case size: %d\n", base);
 
      printf("Populating matrices A and B...\n");
      for(int i = 0; i < size; i++)
@@ -118,7 +118,7 @@ void matmul_rec(int *A, int *B, int *C, int a_row, int a_col, int b_row, int b_c
      printf("Done\n");
 
      printf("The sum is %ld\n", sum);
-     
+
      free(A);
      free(B);
      free(C);

@@ -29,6 +29,11 @@
  #include <stdio.h>
  #include <stdlib.h>
 
+ // Define min macro for integer values
+ #ifndef min
+ #define min(a,b) (((a)<(b))?(a):(b))
+ #endif
+
  // Include the gem5 m5ops header file
  #include <gem5/m5ops.h>
 
@@ -72,20 +77,14 @@
 
      m5_reset_stats(0, 0); // Reset statistics here
 
-     /* blocked matrix multiplication over jk */
-     for (int jj = 0; jj < size; jj += block_size) {
-         for (int kk = 0; kk < size; kk += block_size) {
-             for (int i = 0; i < size; i++) {
-                 for (int j = jj; j < jj + block_size && j < size; j++) {
-                     int sum = 0;
-                     for (int k = kk; k < kk + block_size && k < size; k++) {
-                         sum += A[i * size + k] * B[k * size + j];
-                     }
-                     C[i * size + j] += sum;
-                 }
-             }
-         }
-     }
+     /* blocked matrix multiplication over ijk */
+     for (int ii = 0; ii < size; ii += block_size)
+         for (int jj = 0; jj < size; jj += block_size)
+             for (int kk = 0; kk < size; kk += block_size)
+                 for (int i = ii; i < min(ii+block_size, size); ++i)
+                     for (int j = jj; j < min(jj+block_size, size); ++j)
+                         for (int k = kk; k < min(kk+block_size, size); ++k)
+                             C[i * size + j] += A[i * size + k] * B[k * size + j];
 
      m5_dump_stats(0, 0); // Dump statistics right after
 
@@ -99,7 +98,7 @@
      printf("Done\n");
 
      printf("The sum is %ld\n", sum);
-     
+
      free(A);
      free(B);
      free(C);

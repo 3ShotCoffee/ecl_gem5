@@ -6,16 +6,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 from configs import (
-    assocs,
-    block_sizes,
     cache_sizes,
-    init_block_sizes,
     matrix_sizes,
+    num_channels,
 )
 
 # Static configuration
-metric_json_dir = "metric_jsons-oblivious"
-output_dir = "big_plots-oblivious"
+metric_json_dir = "../metric_jsons-ch"
+output_dir = "../big_plots-ch"
 cache_size_order = {cs: i for i, cs in enumerate(cache_sizes)}
 
 
@@ -28,20 +26,20 @@ def plot_metric(metric, output_dir):
     data = load_metric_data(metric)
     fig, axes = plt.subplots(
         len(matrix_sizes),
-        len(assocs),
-        figsize=(14, 18),
+        len(num_channels),
+        figsize=(21, 18),
         sharex=True,
         sharey=False,
     )
     fig.suptitle(f"Metric: {metric}", fontsize=20)
 
     for row_idx, msize in enumerate(matrix_sizes):
-        for col_idx, assoc in enumerate(assocs):
+        for col_idx, ch in enumerate(num_channels):
             ax = axes[row_idx, col_idx]
             curves = {}  # {block_size: [(cache, value)]}
 
             for entry in data:
-                if entry["matrix"] != msize or entry["assoc"] != assoc:
+                if entry["matrix"] != msize or entry["channels"] != ch:
                     continue
                 curves.setdefault(entry["block"], []).append(
                     (entry["cache"], entry["value"])
@@ -54,7 +52,7 @@ def plot_metric(metric, output_dir):
                 )
                 ax.plot(xs, ys, label=label)
 
-            ax.set_title(f"Matrix {msize}, Assoc {assoc}")
+            ax.set_title(f"Matrix {msize}, {ch} channels")
             ax.set_xlabel("Cache Size")
             ax.set_ylabel(metric)
             ax.grid(True)

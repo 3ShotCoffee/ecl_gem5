@@ -43,15 +43,15 @@ import m5
 # import all of the SimObjects
 from m5.objects import *
 
-m5.util.addToPath("../configs/")
+m5.util.addToPath("../../configs/")
+
+import math
 
 # import the caches which we made
 from caches_l1 import *
 
 # import the SimpleOpts module
 from common import SimpleOpts
-
-import math
 
 # Default to running the m5ops version of x86-matrix-multiply from gem5-resources.
 default_binary = "/home/jhpark/gem5/Prj1/matmul-blocked"
@@ -135,6 +135,10 @@ interleave_bits = int(math.ceil(math.log2(args.num_channels)))
 interleave_size = 64  # bytes (should match burst size)
 total_mem_size = 512 * 1024 * 1024  # 512MB
 
+print(
+    f"Configuring {args.num_channels} channels with interleave size {interleave_size} bytes"
+)
+
 for i in range(args.num_channels):
     mem_ctrl = MemCtrl()
     mem_ctrl.dram = DDR5_6400_4x8()
@@ -146,7 +150,9 @@ for i in range(args.num_channels):
         intlvMatch=i,
     )
     mem_ctrl.port = system.membus.mem_side_ports
-    setattr(system, f"mem_ctrl_{i}", mem_ctrl)  # <- registers with SimObject hierarchy
+    setattr(
+        system, f"mem_ctrl_{i}", mem_ctrl
+    )  # <- registers with SimObject hierarchy
 
 system.workload = SEWorkload.init_compatible(args.binary)
 

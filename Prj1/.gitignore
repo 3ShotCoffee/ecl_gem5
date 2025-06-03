@@ -10,3 +10,6 @@ miniTests
 matmul-base
 matmul-blocked
 matmul-blocked-full
+matmul-oblivious
+# utility helper scripts
+util/

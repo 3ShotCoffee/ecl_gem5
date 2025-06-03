@@ -4,17 +4,17 @@ import re
 from pathlib import Path
 
 from configs import (
-    assocs,
     block_sizes,
     cache_sizes,
     init_block_sizes,
     matrix_sizes,
+    num_channels,
     stat_labels_rep,
 )
 
 init_block_sizes()
 
-base_dir = "out-oblivious"
+base_dir = "../out-ch"
 
 # Initialize data structure for each metric
 metric_data = {short: [] for short in stat_labels_rep.values()}
@@ -43,8 +43,8 @@ for msize in matrix_sizes:
         else:
             sim_dir = Path(base_dir) / f"{msize}_{bsize}"
         for csize in cache_sizes:
-            for assoc in assocs:
-                stat_path = sim_dir / f"{csize}_{assoc}" / "stats.txt"
+            for ch in num_channels:
+                stat_path = sim_dir / f"{csize}_{ch}" / "stats.txt"
                 stats = parse_stats(stat_path, stat_labels_rep)
                 if stats:
                     for key, val in stats.items():
@@ -53,13 +53,13 @@ for msize in matrix_sizes:
                                 "matrix": msize,
                                 "block": bsize,
                                 "cache": csize,
-                                "assoc": assoc,
+                                "channels": ch,
                                 "value": val,
                             }
                         )
 
 # Write each metric to its own JSON file
-output_dir = Path("metric_jsons-oblivious")
+output_dir = Path("../metric_jsons-ch")
 output_dir.mkdir(parents=True, exist_ok=True)
 
 json_paths = []
