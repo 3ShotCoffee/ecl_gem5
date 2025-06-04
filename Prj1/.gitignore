@@ -5,9 +5,7 @@ __pycache__
 testSims/out
 miniTests
 # workload binaries
-matmul-base
-matmul-blocked
-matmul-blocked-full
-matmul-oblivious
+matmul-*
+!/*/matmul-*
 # utility helper scripts
 util/
