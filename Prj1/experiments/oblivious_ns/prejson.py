@@ -12,6 +12,7 @@ from configs import (
     init_block_sizes,
 )
 
+stat_labels_rep["hostSeconds"] = "hostSeconds"
 init_block_sizes()
 
 base_dir = "out"

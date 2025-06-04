@@ -1,7 +1,10 @@
+import sys
 import json
 import os
 import re
 from pathlib import Path
+
+sys.path.append("../../")
 
 from configs import (
     matrix_sizes,
@@ -12,6 +15,7 @@ from configs import (
     init_block_sizes,
 )
 
+stat_labels_rep["hostSeconds"] = "hostSeconds"
 init_block_sizes()
 
 base_dir = "out"
