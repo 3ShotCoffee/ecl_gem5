@@ -18,13 +18,14 @@ from configs import (
     init_block_sizes,
 )
 
-matrix_sizes = [128, 256, 512, 1024]
+matrix_sizes = [128, 256, 512]
 
 init_block_sizes()
 
 gem5_exe = "../../../build/X86/gem5.opt"
 script = "../../system_l1.py"
 out_root = "out"
+workload = "../../matmul-morton"
 max_workers = 20  # Adjust to use fewer cores if needed
 SUCCESS_STRING = "The sum is"
 END_STRING = "End Simulation Statistics"
@@ -36,7 +37,7 @@ def construct_job(msize, bsize, csize, assoc):
     args = [
         f"--l1d_size={csize}",
         f"--l1d_assoc={assoc}",
-        "matmul-morton",
+        workload,
         str(msize),
         str(bsize),
     ]
