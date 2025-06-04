@@ -1,9 +1,12 @@
+import sys
 import argparse
 import json
 import os
 
 import matplotlib.pyplot as plt
 import seaborn as sns
+
+sys.path.append("../../")
 
 from configs import (
     matrix_sizes,
