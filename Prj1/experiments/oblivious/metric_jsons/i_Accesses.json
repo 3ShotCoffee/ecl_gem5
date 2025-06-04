@@ -1,48 +1,6 @@
 [
   {
     "matrix": 100,
-    "block": 0,
-    "cache": "16kB",
-    "assoc": 4,
-    "value": 9205746.0
-  },
-  {
-    "matrix": 100,
-    "block": 0,
-    "cache": "16kB",
-    "assoc": 8,
-    "value": 9205746.0
-  },
-  {
-    "matrix": 100,
-    "block": 0,
-    "cache": "32kB",
-    "assoc": 4,
-    "value": 9205746.0
-  },
-  {
-    "matrix": 100,
-    "block": 0,
-    "cache": "32kB",
-    "assoc": 8,
-    "value": 9205746.0
-  },
-  {
-    "matrix": 100,
-    "block": 0,
-    "cache": "64kB",
-    "assoc": 4,
-    "value": 9205746.0
-  },
-  {
-    "matrix": 100,
-    "block": 0,
-    "cache": "64kB",
-    "assoc": 8,
-    "value": 9205746.0
-  },
-  {
-    "matrix": 100,
     "block": 16,
     "cache": "16kB",
     "assoc": 4,
@@ -166,48 +124,6 @@
     "cache": "64kB",
     "assoc": 8,
     "value": 10311031.0
-  },
-  {
-    "matrix": 128,
-    "block": 0,
-    "cache": "16kB",
-    "assoc": 4,
-    "value": 19208253.0
-  },
-  {
-    "matrix": 128,
-    "block": 0,
-    "cache": "16kB",
-    "assoc": 8,
-    "value": 19208253.0
-  },
-  {
-    "matrix": 128,
-    "block": 0,
-    "cache": "32kB",
-    "assoc": 4,
-    "value": 19208253.0
-  },
-  {
-    "matrix": 128,
-    "block": 0,
-    "cache": "32kB",
-    "assoc": 8,
-    "value": 19208253.0
-  },
-  {
-    "matrix": 128,
-    "block": 0,
-    "cache": "64kB",
-    "assoc": 4,
-    "value": 19208253.0
-  },
-  {
-    "matrix": 128,
-    "block": 0,
-    "cache": "64kB",
-    "assoc": 8,
-    "value": 19208253.0
   },
   {
     "matrix": 128,
@@ -379,48 +295,6 @@
   },
   {
     "matrix": 200,
-    "block": 0,
-    "cache": "16kB",
-    "assoc": 4,
-    "value": 72806875.0
-  },
-  {
-    "matrix": 200,
-    "block": 0,
-    "cache": "16kB",
-    "assoc": 8,
-    "value": 72806875.0
-  },
-  {
-    "matrix": 200,
-    "block": 0,
-    "cache": "32kB",
-    "assoc": 4,
-    "value": 72806875.0
-  },
-  {
-    "matrix": 200,
-    "block": 0,
-    "cache": "32kB",
-    "assoc": 8,
-    "value": 72806875.0
-  },
-  {
-    "matrix": 200,
-    "block": 0,
-    "cache": "64kB",
-    "assoc": 4,
-    "value": 72806875.0
-  },
-  {
-    "matrix": 200,
-    "block": 0,
-    "cache": "64kB",
-    "assoc": 8,
-    "value": 72806875.0
-  },
-  {
-    "matrix": 200,
     "block": 16,
     "cache": "16kB",
     "assoc": 4,
@@ -586,48 +460,6 @@
     "cache": "64kB",
     "assoc": 8,
     "value": 81216660.0
-  },
-  {
-    "matrix": 256,
-    "block": 0,
-    "cache": "16kB",
-    "assoc": 4,
-    "value": 152313404.0
-  },
-  {
-    "matrix": 256,
-    "block": 0,
-    "cache": "16kB",
-    "assoc": 8,
-    "value": 152313404.0
-  },
-  {
-    "matrix": 256,
-    "block": 0,
-    "cache": "32kB",
-    "assoc": 4,
-    "value": 152313404.0
-  },
-  {
-    "matrix": 256,
-    "block": 0,
-    "cache": "32kB",
-    "assoc": 8,
-    "value": 152313404.0
-  },
-  {
-    "matrix": 256,
-    "block": 0,
-    "cache": "64kB",
-    "assoc": 4,
-    "value": 152313404.0
-  },
-  {
-    "matrix": 256,
-    "block": 0,
-    "cache": "64kB",
-    "assoc": 8,
-    "value": 152313404.0
   },
   {
     "matrix": 256,
@@ -838,48 +670,6 @@
     "cache": "64kB",
     "assoc": 8,
     "value": 168961163.0
-  },
-  {
-    "matrix": 512,
-    "block": 0,
-    "cache": "16kB",
-    "assoc": 4,
-    "value": 1213214238.0
-  },
-  {
-    "matrix": 512,
-    "block": 0,
-    "cache": "16kB",
-    "assoc": 8,
-    "value": 1213214238.0
-  },
-  {
-    "matrix": 512,
-    "block": 0,
-    "cache": "32kB",
-    "assoc": 4,
-    "value": 1213214238.0
-  },
-  {
-    "matrix": 512,
-    "block": 0,
-    "cache": "32kB",
-    "assoc": 8,
-    "value": 1213214238.0
-  },
-  {
-    "matrix": 512,
-    "block": 0,
-    "cache": "64kB",
-    "assoc": 4,
-    "value": 1213214238.0
-  },
-  {
-    "matrix": 512,
-    "block": 0,
-    "cache": "64kB",
-    "assoc": 8,
-    "value": 1213214238.0
   },
   {
     "matrix": 512,
@@ -1132,48 +922,6 @@
     "cache": "64kB",
     "assoc": 8,
     "value": 1346910829.0
-  },
-  {
-    "matrix": 1024,
-    "block": 0,
-    "cache": "16kB",
-    "assoc": 4,
-    "value": 9682573363.0
-  },
-  {
-    "matrix": 1024,
-    "block": 0,
-    "cache": "16kB",
-    "assoc": 8,
-    "value": 9682573363.0
-  },
-  {
-    "matrix": 1024,
-    "block": 0,
-    "cache": "32kB",
-    "assoc": 4,
-    "value": 9682573363.0
-  },
-  {
-    "matrix": 1024,
-    "block": 0,
-    "cache": "32kB",
-    "assoc": 8,
-    "value": 9682573363.0
-  },
-  {
-    "matrix": 1024,
-    "block": 0,
-    "cache": "64kB",
-    "assoc": 4,
-    "value": 9682573363.0
-  },
-  {
-    "matrix": 1024,
-    "block": 0,
-    "cache": "64kB",
-    "assoc": 8,
-    "value": 9682573363.0
   },
   {
     "matrix": 1024,
